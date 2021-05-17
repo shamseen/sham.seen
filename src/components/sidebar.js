@@ -1,9 +1,15 @@
-import Drawer from '@material-ui/core/Drawer';
-import Divider from '@material-ui/core/Divider';
+import { useState } from 'react';
+import { Divider, Drawer } from 'antd';
+import 'antd/dist/antd.css';
+
 
 export default function Sidebar() {
+
+    const [open, setOpen] = useState(true);
+
+
     return (
-        <Drawer variant="persistent" open={true}>
+        <Drawer visible={open} onClose={() => { setOpen(!open) }}>
             item
             <Divider />
             item
