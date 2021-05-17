@@ -1,6 +1,7 @@
-# Sass clutter
+# Clutter
 *.css
 *.css.map
+assets/
 
 # Logs
 logs

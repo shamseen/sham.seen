@@ -1,6 +1,23 @@
+/* Sublime monokai theme */
+$background: #272822;
+$comments: #797979;
+$white: #d6d6d6;
+$yellow: #e6db74;
+$green: #a6e22e;
+$orange: #fd971f;
+$purple: #ae81ff;
+$pink: #f92672;
+$blue: #66d9ef;
+
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   box-sizing: border-box;
+}
+
+.content {
+  background: $comments url("../assets/catamaran.jpg") no-repeat;
+  background-size: 100% 200%;
+  // TO DO: opacity / pseudo-elements
 }
