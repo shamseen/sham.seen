@@ -10,13 +10,13 @@ export default function SkillSnapshot() {
 
 
     return (
-        <Space direction="vertical" id="skillSnapshot">
+        <Space direction="vertical" id="skillSnapshot" className="gray-bg">
             <Avatar
                 icon={<AntDesignOutlined />}
-                size={64}
+                size={84}
                 alt="avatar image"
             />
-            <Tabs centered defaultActiveKey="1" type="card" size='small'>
+            <Tabs defaultActiveKey="1" type="card" size='large'>
                 <TabPane tab={<CodeOutlined />} key="1" >
                     Coding stats
                 </TabPane>

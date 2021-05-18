@@ -15,7 +15,7 @@ export default function Main() {
     const [open, setOpen] = useState(true);
 
     return (
-        <Layout>
+        <Layout id="layout">
 
             {/* ---- Quick overview of my skills ---- */}
             {/* TODO: responsive */}
@@ -32,17 +32,11 @@ export default function Main() {
                     setOpen(!collapsed);
                     console.log("collapsed: ", collapsed, type);
                 }}
-                className="" >
+                className="gray-bg" >
                 <SkillSnapshot />
             </Sider>
 
-            <Content
-                className="site-layout-background content"
-                style={{
-                    margin: '24px 16px',
-                    padding: 24,
-                    minHeight: 280,
-                }}>
+            <Content className="content">
                 {/* TODO: Jumbotron, cards, FAB, etc */}
                 Content
             </Content>
