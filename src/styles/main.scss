@@ -1,7 +1,7 @@
 /* Sublime monokai theme */
-$background: #272822;
+$background: #27282250;
 $comments: #797979;
-$white: rgba(255, 255, 255, 0.699);
+$white: rgba(255, 255, 255, 0.452);
 $gray: #d6d6d6;
 $yellow: #e6db74;
 $green: #a6e22e;
@@ -18,12 +18,18 @@ $blue: #66d9ef;
   color: $comments;
 }
 
-.content {
-  background: $white url("../assets/catamaran.jpg") no-repeat;
-  background-size: cover;
-  padding: 24px 16px;
+#content-container {
+  background: $background;
+  padding: 1em;
   min-height: 100vh;
   // TO DO: opacity / pseudo-elements
+}
+
+.ant-layout-content {
+  background: $background url("../assets/catamaran.jpg") no-repeat;
+  background-size: cover;
+  border-radius: 3px;
+  padding: 2em;
 }
 
 .gray-bg {

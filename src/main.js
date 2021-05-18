@@ -20,6 +20,7 @@ export default function Main() {
             {/* ---- Quick overview of my skills ---- */}
             {/* TODO: responsive */}
             <Sider
+                width="30%"
                 theme="light"
                 collapsible={true}
                 collapsed={!open}
@@ -36,10 +37,12 @@ export default function Main() {
                 <SkillSnapshot />
             </Sider>
 
-            <Content className="content">
-                {/* TODO: Jumbotron, cards, FAB, etc */}
-                Content
-            </Content>
+            <Layout id="content-container">
+                <Content >
+                    {/* TODO: Jumbotron, cards, FAB, etc */}
+                    Content
+                </Content>
+            </Layout>
         </Layout >
     )
 }

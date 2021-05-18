@@ -1,7 +1,7 @@
 # Clutter
 *.css
 *.css.map
-assets/
+# assets/
 
 # Logs
 logs
