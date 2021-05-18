@@ -14,10 +14,26 @@ $blue: #66d9ef;
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   box-sizing: border-box;
+  color: $background;
 }
 
 .content {
   background: $comments url("../assets/catamaran.jpg") no-repeat;
   background-size: 100% 200%;
   // TO DO: opacity / pseudo-elements
+}
+
+.gray-bg {
+  background: $comments;
+}
+
+// <Space /> uses flex-direction=column
+#skillSnapshot {
+  display: flex;
+  align-items: center;
+  background: $white;
+
+  .ant-tabs-tab-active {
+    background: $white;
+  }
 }
