@@ -18,14 +18,23 @@ export default function Main() {
         <Layout>
 
             {/* ---- Quick overview of my skills ---- */}
-            <Sider trigger={null} collapsible collapsed={open}>
+            {/* TODO: responsive */}
+            <Sider
+                theme="light"
+                collapsible={true}
+                collapsed={!open}
+                collapsedWidth="0"
+                // breakpoint="sm"
+                // onBreakpoint={broken => {
+                //     console.log("broken: ", broken);
+                // }}
+                onCollapse={(collapsed, type) => {
+                    setOpen(!collapsed);
+                    console.log("collapsed: ", collapsed, type);
+                }}
+                className="" >
                 <SkillSnapshot />
             </Sider>
-            {/* Toggle sider */}
-            <Button
-                icon={<IdcardFilled />}
-                onClick={() => { setOpen(!open) }}>
-            </Button>
 
             <Content
                 className="site-layout-background content"
@@ -37,6 +46,6 @@ export default function Main() {
                 {/* TODO: Jumbotron, cards, FAB, etc */}
                 Content
             </Content>
-        </Layout>
+        </Layout >
     )
 }
