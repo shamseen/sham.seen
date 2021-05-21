@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import SkillSnapshot from './components/skillSnapshot';
 import { Button, Layout } from "antd";
-import {
-    IdcardFilled
-} from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import "./styles/main.scss";
 
