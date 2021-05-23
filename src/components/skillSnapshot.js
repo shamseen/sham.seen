@@ -13,8 +13,8 @@ export default function SkillSnapshot() {
     return (
         <Space direction="vertical" id="skillSnapshot" className="gray-bg">
             <Avatar
-                size={84}
-                src="https://media-exp1.licdn.com/dms/image/C5603AQHXHDYV0Gf0GA/profile-displayphoto-shrink_800_800/0/1517282074745?e=1626912000&v=beta&t=Wcxkq5fCKJwfhkfranPupyea_zdGf1OU7qaxYkg8s9A"
+                size={100}
+                src="./moi.jpg"
                 alt="avatar image"
             />
             <Title level={3}>Shamseen Rahman</Title>
