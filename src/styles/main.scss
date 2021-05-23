@@ -27,16 +27,16 @@ $blue: #66d9ef;
   align-items: center;
   justify-content: center;
 
-  &:before {
-    content: "";
-    background: $background url("../assets/catamaran.jpg") no-repeat;
-    background-size: cover;
-    border-radius: 3px;
-    height: 98%;
-    width: 98%;
-    padding: 2em;
-    opacity: 0.5;
-  }
+  // &:before {
+  //   content: "";
+  //   background: $background url("../assets/catamaran.jpg") no-repeat;
+  //   background-size: cover;
+  //   border-radius: 3px;
+  //   height: 98%;
+  //   width: 98%;
+  //   padding: 2em;
+  //   opacity: 0.5;
+  // }
 }
 
 .gray-bg {
