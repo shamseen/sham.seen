@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Body from "./views/body";
 import SkillSnapshot from './components/skillSnapshot';
 import { Button, Layout } from "antd";
 import 'antd/dist/antd.css';
@@ -28,7 +29,6 @@ export default function Main() {
                 // }}
                 onCollapse={(collapsed, type) => {
                     setOpen(!collapsed);
-                    console.log("collapsed: ", collapsed, type);
                 }}
                 className="gray-bg" >
                 <SkillSnapshot />
@@ -36,8 +36,7 @@ export default function Main() {
 
             <Layout id="content-container">
                 <Content >
-                    {/* TODO: Jumbotron, cards, FAB, etc */}
-                    Content
+                    <Body />
                 </Content>
             </Layout>
         </Layout >

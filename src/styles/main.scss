@@ -1,5 +1,6 @@
 /* Sublime monokai theme */
-$background: #27282250;
+$background: #272822e3;
+$body-background: #272822be;
 $comments: #797979;
 $white: rgba(255, 255, 255, 0.452);
 $gray: #d6d6d6;
@@ -10,37 +11,55 @@ $purple: #ae81ff;
 $pink: #f92672;
 $blue: #66d9ef;
 
+/* Spacing */
+$height: 100%;
+$width: 98%;
+
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-  box-sizing: border-box;
   color: $comments;
 }
 
-#content-container {
-  background: $background;
-  padding: 1em;
-  min-height: 100vh;
-  // TO DO: opacity / pseudo-elements
+#layout {
+  height: 95vh;
 }
 
-.ant-layout-content {
+#content-container {
   background: $background url("../assets/catamaran.jpg") no-repeat;
   background-size: cover;
   border-radius: 3px;
-  padding: 2em;
+  height: 95vh;
+  width: 95vw;
+  margin: 2vh 2vw;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  &:before {
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-    background: $background url("../assets/catamaran.jpg") no-repeat;
-    background-size: cover;
-    border-radius: 3px;
+.ant-layout-content {
+  display: flex;
+  flex-flow: row wrap;
+  flex-grow: 1;
+  width: 100%;
+
+  #body {
+    background-color: $body-background;
+    color: white;
+    margin: 0px;
     padding: 2em;
+    width: 100%;
   }
 }
+
+.ant-card .ant-card-bordered {
+  background-color: $background;
+  border-radius: 50px;
+  color: white;
+}
+
 .gray-bg {
   background: $gray;
 }
@@ -49,9 +68,11 @@ $blue: #66d9ef;
 #skillSnapshot {
   display: flex;
   align-items: center;
+  height: $height;
+  justify-content: center;
 
   * {
-    width: 98%;
+    width: $width;
   }
 
   // for whatever reason, avatar doesn't want to center
@@ -74,8 +95,14 @@ $blue: #66d9ef;
     border-bottom: 0;
   }
 
-  #codingStats {
-    background: $white url("../assets/stats.png") no-repeat;
-    background-size: cover;
+  .ant-typography {
+    color: $comments;
+    text-align: center;
   }
+}
+
+#objectiveStmt {
+  background: inherit;
+  border-radius: 50px;
+  width: $width;
 }
