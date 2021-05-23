@@ -21,26 +21,24 @@ $blue: #66d9ef;
 #content-container {
   background: $background;
   padding: 1em;
-  min-height: 100vh;
-  // TO DO: opacity / pseudo-elements
-}
-
-.ant-layout-content {
-  background: $background url("../assets/catamaran.jpg") no-repeat;
-  background-size: cover;
-  border-radius: 3px;
-  padding: 2em;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:before {
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
+    content: "";
     background: $background url("../assets/catamaran.jpg") no-repeat;
     background-size: cover;
     border-radius: 3px;
+    height: 98%;
+    width: 98%;
     padding: 2em;
+    opacity: 0.5;
   }
 }
+
 .gray-bg {
   background: $gray;
 }
@@ -49,6 +47,7 @@ $blue: #66d9ef;
 #skillSnapshot {
   display: flex;
   align-items: center;
+  height: 100%;
 
   * {
     width: 98%;

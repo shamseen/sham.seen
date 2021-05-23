@@ -28,7 +28,6 @@ export default function Main() {
                 // }}
                 onCollapse={(collapsed, type) => {
                     setOpen(!collapsed);
-                    console.log("collapsed: ", collapsed, type);
                 }}
                 className="gray-bg" >
                 <SkillSnapshot />
