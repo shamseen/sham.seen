@@ -1,14 +1,21 @@
 import {
     CodeOutlined
 } from '@ant-design/icons';
-import { Avatar, Progress, Space, Tabs, Typography } from "antd";
+import { Avatar, Image, Space, Tabs, Typography } from "antd";
 const { TabPane } = Tabs;
 const { Title } = Typography;
-import "../styles/main.scss";
+import "../styles/skillSnapshot.scss";
 
 
 export default function SkillSnapshot() {
 
+    //  Customize stats img https://github.com/anuraghazra/github-readme-stats#customization
+    const languageStats = `https://github-readme-stats.vercel.app/api/top-langs/?username=shamseen`
+        + `&layout=compact`
+        + `&custom_title=Languages`
+        + `&langs_count=7`
+        + `&theme=graywhite`
+        + `&hide_border=true`;
 
     return (
         <Space direction="vertical" id="skillSnapshot" className="gray-bg">
@@ -20,12 +27,14 @@ export default function SkillSnapshot() {
             <Title level={3}>Shamseen Rahman</Title>
             <Tabs defaultActiveKey="1" type="card" size='large'>
                 <TabPane tab={<CodeOutlined />} key="1">
-                    [Sample coding stats]
-                    <Progress percent={30} />
-                    <Progress percent={50} status="active" />
-                    <Progress percent={70} status="exception" />
-                    <Progress percent={100} />
-                    <Progress percent={50} showInfo={false} />
+                    <Image
+                        // transparent bg when on sidebar
+                        src={languageStats + `&bg_color=00000000`}
+
+                        // opaque bg if user clicks on image
+                        preview={{ src: languageStats }}
+
+                        alt="Languages used in github" />
                 </TabPane>
                 <TabPane tab="🧬" key="2" >
                     Biomed stats

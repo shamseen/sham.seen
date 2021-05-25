@@ -1,25 +1,26 @@
-import { Avatar, Card, Comment, Space } from "antd";
 import { FeaturedProjects, BackendProjects, FrontendProjects } from "./";
+import { Card, Space, Typography } from "antd";
+const { Title } = Typography;
 
 export default function Body() {
   return (
     <div id="body">
       {/* Brand / Objective statement */}
-      <Card id="objectiveStmt">
-        <Comment
-          avatar={
-            <Avatar
-              src="https://media-exp1.licdn.com/dms/image/C5603AQHXHDYV0Gf0GA/profile-displayphoto-shrink_800_800/0/1517282074745?e=1626912000&v=beta&t=Wcxkq5fCKJwfhkfranPupyea_zdGf1OU7qaxYkg8s9A"
-              alt="mini-avatar image"
-            />
-          }
-          content={
-            <p>
-              Aspiring web developer and a biomedical researcher (ideally at the same company!)
-              I have a knack for workflow management (and a Certified ScrumMaster), hold myself to a high standard, and value friendships with my colleagues; ensuring that myself and my team are working on the best version of our solutions.
-          </p>
-          }
-        />
+      <Card id="objectiveStmt" bordered={false}>
+        <Title level={3}>sham•seen</Title>
+        <div>
+          <i>noun</i>
+          <ol>
+            <li>Full-stack MERN developer; biomedical researcher in tissue engineering; a double threat.</li>
+            <li>Web apps that improve research processes and accessibility to non-coders (see: .pnGCAT).</li>
+          </ol>
+        </div>
+        <div>
+          <i>adjective</i>
+          <ul style={{ listStyleType: "none" }}>
+            <li>Good workflow management; meticulous for best practices.</li>
+          </ul>
+        </div>
       </Card>
 
       {/* Views */}
@@ -36,3 +37,11 @@ export default function Body() {
     </div>
   )
 }
+
+/*
+---  BRAND STATEMENT ---
+=> experience instead of aspirations (keep same company bit)
+=> automating processes for employees non/coders
+=> SBOL
+=> what u do; extension of that (automating processes); plug to skillset / proj; scrum master
+*/
