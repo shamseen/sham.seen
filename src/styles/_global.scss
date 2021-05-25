@@ -1,15 +1,20 @@
 /* Sublime monokai theme */
-$background: #272822e3;
-$body-background: #272822e7;
-$comments: #797979;
-$white: rgba(255, 255, 255, 0.452);
-$gray: #d6d6d6;
-$yellow: #e6db74;
-$green: #a6e22e;
-$orange: #fd971f;
-$purple: #ae81ff;
-$pink: #f92672;
-$blue: #66d9ef;
+$background: rgba(39, 40, 34, 1);
+$comments: rgb(121, 121, 121);
+$white: rgb(214, 214, 214);
+$yellow: rgb(230, 219, 116);
+$green: rgb(166, 226, 46);
+$orange: rgb(253, 151, 31);
+$purple: rgb(174, 129, 255);
+$pink: rgb(249, 38, 114);
+$blue: rgb(102, 217, 239);
+
+/* Additional colors */
+$gray: rgba(207, 216, 220, 1);
+$white-transp: rgba(255, 255, 255, 0.452);
+$background-transp: rgba(39, 40, 34, 0.849);
+$text-dark: rgba(39, 40, 34, 1);
+$text-light: rgba(121, 121, 121);
 
 /* Spacing */
 $height: 100%;
@@ -34,4 +39,20 @@ $width: 98%;
 
 .gray-bg {
   background: $gray;
+}
+
+@mixin custom-scroll-bar($value: $white) {
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: $value;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $value;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $background-transp;
+  }
 }

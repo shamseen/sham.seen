@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   height: $height;
-  justify-content: center;
 
   * {
     width: $width;
@@ -20,14 +19,14 @@
 
   // tab headers don't automatically change color :')
   .ant-tabs-tab {
-    background: $white;
+    background: $white-transp;
     text-align: center;
     color: $gray;
   }
 
   .ant-tabs-tab-active {
     background: $gray;
-    border: 2px solid $white;
+    border: 2px solid $white-transp;
     border-bottom: 0;
   }
 

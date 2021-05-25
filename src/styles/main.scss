@@ -6,6 +6,7 @@ $width: 98%;
 
 #layout {
   height: 95vh;
+  overflow-y: hidden;
 }
 
 #content-container {
@@ -27,12 +28,17 @@ $width: 98%;
   flex-grow: 1;
   width: 100%;
 
+  overflow-y: scroll;
+  @include custom-scroll-bar();
+
   #body {
-    background-color: $body-background;
+    background-color: $background-transp;
     color: white;
+
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+
     margin: 0px;
     padding: 2em;
     width: 100%;
@@ -42,10 +48,9 @@ $width: 98%;
 #objectiveStmt {
   background-color: $gray;
   width: $width;
-
   max-width: fit-content;
 
   * {
-    color: $background;
+    color: $text-dark;
   }
 }
