@@ -1,6 +1,6 @@
 /* Sublime monokai theme */
 $background: #272822e3;
-$body-background: #272822be;
+$body-background: #272822e7;
 $comments: #797979;
 $white: rgba(255, 255, 255, 0.452);
 $gray: #d6d6d6;
@@ -26,6 +26,10 @@ $width: 98%;
   background-color: $background;
   border-radius: 50px;
   color: white;
+}
+
+.ant-typography {
+  color: $white;
 }
 
 .gray-bg {
