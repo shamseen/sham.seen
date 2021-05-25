@@ -1,15 +1,4 @@
-/* Sublime monokai theme */
-$background: #272822e3;
-$body-background: #272822be;
-$comments: #797979;
-$white: rgba(255, 255, 255, 0.452);
-$gray: #d6d6d6;
-$yellow: #e6db74;
-$green: #a6e22e;
-$orange: #fd971f;
-$purple: #ae81ff;
-$pink: #f92672;
-$blue: #66d9ef;
+@import "global";
 
 /* Spacing */
 $height: 100%;
@@ -51,53 +40,6 @@ $width: 98%;
     margin: 0px;
     padding: 2em;
     width: 100%;
-  }
-}
-
-.ant-card .ant-card-bordered {
-  background-color: $background;
-  border-radius: 50px;
-  color: white;
-}
-
-.gray-bg {
-  background: $gray;
-}
-
-// <Space /> uses flex-direction=column
-#skillSnapshot {
-  display: flex;
-  align-items: center;
-  height: $height;
-  justify-content: center;
-
-  * {
-    width: $width;
-  }
-
-  // for whatever reason, avatar doesn't want to center
-  .ant-space-item {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
-
-  // tab headers don't automatically change color :')
-  .ant-tabs-tab {
-    background: $white;
-    text-align: center;
-    color: $gray;
-  }
-
-  .ant-tabs-tab-active {
-    background: $gray;
-    border: 2px solid $white;
-    border-bottom: 0;
-  }
-
-  .ant-typography {
-    color: $comments;
-    text-align: center;
   }
 }
 

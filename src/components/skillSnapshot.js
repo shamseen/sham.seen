@@ -4,7 +4,7 @@ import {
 import { Avatar, Image, Space, Tabs, Typography } from "antd";
 const { TabPane } = Tabs;
 const { Title } = Typography;
-import "../styles/main.scss";
+import "../styles/skillSnapshot.scss";
 
 
 export default function SkillSnapshot() {
@@ -12,8 +12,7 @@ export default function SkillSnapshot() {
     const languageStats = `https://github-readme-stats.vercel.app/api/top-langs/?username=shamseen`
         + `&layout=compact`
         + `&custom_title=Languages`
-        + `&langs_count=6`
-        + `&hide=c%23`
+        + `&langs_count=7`
         + `&theme=graywhite`
         + `&bg_color=00000000`
         + `&hide_border=true`;
@@ -30,7 +29,7 @@ export default function SkillSnapshot() {
                 <TabPane tab={<CodeOutlined />} key="1">
                     <Image src={languageStats} preview={false} />
 
-                    {/* Themes
+                    {/* Customize stats
                         https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
                     */}
                 </TabPane>

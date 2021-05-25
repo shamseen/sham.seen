@@ -1,0 +1,38 @@
+@import "global";
+
+// <Space /> uses flex-direction=column
+#skillSnapshot {
+  display: flex;
+  align-items: center;
+  height: $height;
+  justify-content: center;
+
+  * {
+    width: $width;
+  }
+
+  // for whatever reason, avatar doesn't want to center
+  .ant-space-item {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  // tab headers don't automatically change color :')
+  .ant-tabs-tab {
+    background: $white;
+    text-align: center;
+    color: $gray;
+  }
+
+  .ant-tabs-tab-active {
+    background: $gray;
+    border: 2px solid $white;
+    border-bottom: 0;
+  }
+
+  .ant-typography {
+    color: $comments;
+    text-align: center;
+  }
+}
