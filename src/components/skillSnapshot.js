@@ -9,12 +9,12 @@ import "../styles/skillSnapshot.scss";
 
 export default function SkillSnapshot() {
 
+    //  Customize stats img https://github.com/anuraghazra/github-readme-stats#customization
     const languageStats = `https://github-readme-stats.vercel.app/api/top-langs/?username=shamseen`
         + `&layout=compact`
         + `&custom_title=Languages`
         + `&langs_count=7`
         + `&theme=graywhite`
-        + `&bg_color=00000000`
         + `&hide_border=true`;
 
     return (
@@ -27,11 +27,14 @@ export default function SkillSnapshot() {
             <Title level={3}>Shamseen Rahman</Title>
             <Tabs defaultActiveKey="1" type="card" size='large'>
                 <TabPane tab={<CodeOutlined />} key="1">
-                    <Image src={languageStats} preview={false} />
+                    <Image
+                        // transparent bg when on sidebar
+                        src={languageStats + `&bg_color=00000000`}
 
-                    {/* Customize stats
-                        https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
-                    */}
+                        // opaque bg if user clicks on image
+                        preview={{ src: languageStats }}
+
+                        alt="Languages used in github" />
                 </TabPane>
                 <TabPane tab="🧬" key="2" >
                     Biomed stats
