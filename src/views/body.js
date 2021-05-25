@@ -37,11 +37,3 @@ export default function Body() {
     </div>
   )
 }
-
-/*
----  BRAND STATEMENT ---
-=> experience instead of aspirations (keep same company bit)
-=> automating processes for employees non/coders
-=> SBOL
-=> what u do; extension of that (automating processes); plug to skillset / proj; scrum master
-*/
