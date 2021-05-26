@@ -50,15 +50,11 @@ export default function Sidebar() {
             <div id="contact">
                 <Title level={3} style={{ flexBasis: '100%' }}>Shamseen Rahman</Title>
 
-                {/* Icon links */}
-                {/* {contactLinks.map(link => {
-                    return <Link
-                        href={link.url} key={link.name}>{link.icon}</Link>;
-                })} */}
                 <Button.Group>
                     {contactLinks.map(link => {
                         return <Button size="large" type="link"
-                            href={link.url} key={link.name}
+                            href={link.url} target="_blank"
+                            key={link.name}
                             icon={link.icon} />;
                     })}
                 </Button.Group>
