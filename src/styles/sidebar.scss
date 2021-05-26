@@ -1,5 +1,8 @@
 @import "global";
 
+.ant-badge-count {
+  background-color: $text-light !important;
+}
 // <Space /> uses flex-direction=column
 #sidebar {
   display: flex;
@@ -7,10 +10,6 @@
   height: $height;
   overflow-y: scroll;
   @include custom-scroll-bar($white, $background-transp);
-
-  * {
-    width: $width;
-  }
 
   // for whatever reason, avatar doesn't want to center
   .ant-space-item {
@@ -35,5 +34,20 @@
   .ant-typography {
     color: $comments;
     text-align: center;
+  }
+}
+
+#skillSnapshot {
+  width: 98%;
+}
+
+#contact {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  .ant-divider {
+    border-color: $gray;
+    border-width: 3px;
   }
 }
