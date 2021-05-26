@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Body from "./views/body";
-import SkillSnapshot from './components/skillSnapshot';
+import Sidebar from './views/sidebar';
 import { Button, Layout } from "antd";
 import 'antd/dist/antd.css';
 import "./styles/main.scss";
@@ -31,7 +31,7 @@ export default function Main() {
                     setOpen(!collapsed);
                 }}
                 className="gray-bg" >
-                <SkillSnapshot />
+                <Sidebar />
             </Sider>
 
             <Layout id="content-container">

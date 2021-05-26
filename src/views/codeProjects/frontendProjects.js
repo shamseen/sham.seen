@@ -1,4 +1,4 @@
-import ProjectDeck from "../components/projectDeck";
+import ProjectDeck from "../../components/projectDeck";
 
 export default function FrontendProjects() {
   return (
