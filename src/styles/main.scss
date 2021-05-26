@@ -25,7 +25,6 @@ $width: 98%;
 .ant-layout-content {
   display: flex;
   flex-flow: row wrap;
-  flex-grow: 1;
   width: 100%;
 
   overflow-y: scroll;
@@ -42,11 +41,21 @@ $width: 98%;
     margin: 0px;
     padding: 2em;
     width: 100%;
+
+    .view-divider {
+      border-color: $white;
+      border-width: 3px;
+    }
+
+    .view-title {
+      color: $white;
+    }
   }
 }
 
 #objectiveStmt {
   background-color: $gray;
+  margin-bottom: 1em;
   width: $width;
   max-width: fit-content;
 
