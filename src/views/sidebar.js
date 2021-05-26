@@ -1,7 +1,7 @@
-import {
-    CodeOutlined
-} from '@ant-design/icons';
-import { Avatar, Image, Space, Tabs, Typography } from "antd";
+import WebDevSkills from "./skillSnapshots/webDev";
+import BiomedSkills from "./skillSnapshots/biomed";
+import { CodeOutlined } from '@ant-design/icons';
+import { Avatar, Space, Tabs, Typography } from "antd";
 const { TabPane } = Tabs;
 const { Title } = Typography;
 import "../styles/sidebar.scss";
@@ -9,13 +9,18 @@ import "../styles/sidebar.scss";
 
 export default function Sidebar() {
 
-    //  Customize stats img https://github.com/anuraghazra/github-readme-stats#customization
-    const languageStats = `https://github-readme-stats.vercel.app/api/top-langs/?username=shamseen`
-        + `&layout=compact`
-        + `&custom_title=Languages`
-        + `&langs_count=7`
-        + `&theme=graywhite`
-        + `&hide_border=true`;
+    const skillTabs = [
+        {
+            tab: <CodeOutlined />,
+            title: 'Experience',
+            content: <WebDevSkills />
+        },
+        {
+            tab: '🧬',
+            title: 'Experience',
+            content: <BiomedSkills />
+        }
+    ]
 
     return (
         <Space direction="vertical" id="sidebar" className="gray-bg">
@@ -28,20 +33,17 @@ export default function Sidebar() {
             <div className="contact">
 
             </div>
-            <Tabs defaultActiveKey="1" type="card" size='large' className="skillSnapshot">
-                <TabPane tab={<CodeOutlined />} key="1">
-                    <Image
-                        // transparent bg when on sidebar
-                        src={languageStats + `&bg_color=00000000`}
-
-                        // opaque bg if user clicks on image
-                        preview={{ src: languageStats }}
-
-                        alt="Languages used in github" />
-                </TabPane>
-                <TabPane tab="🧬" key="2" >
-                    Biomed stats
-                </TabPane>
+            <Tabs defaultActiveKey="0" type="card" size='large' className="skillSnapshot">
+                {
+                    skillTabs.map((tab, i) => {
+                        return (
+                            <TabPane tab={tab.tab} key={i}>
+                                <Title level={5}>{tab.title}</Title>
+                                {tab.content}
+                            </TabPane>
+                        );
+                    })
+                }
             </Tabs>
         </Space>
     )
