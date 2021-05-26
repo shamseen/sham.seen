@@ -6,7 +6,7 @@
   align-items: center;
   height: $height;
   overflow-y: scroll;
-  @include custom-scroll-bar();
+  @include custom-scroll-bar($white, $background-transp);
 
   * {
     width: $width;
