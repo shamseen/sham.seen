@@ -9,7 +9,7 @@
   align-items: center;
   height: $height;
   overflow-y: scroll;
-  @include custom-scroll-bar($white, $background-transp);
+  @include custom-scroll-bar($gray, $background-transp);
 
   // for whatever reason, avatar doesn't want to center
   .ant-space-item {
