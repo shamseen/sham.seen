@@ -1,5 +1,5 @@
-import { Space } from 'antd';
 import ProjectCard from './projectCard';
+import { Space } from 'antd';
 
 const placeholder = new Array(3).fill(
   {
@@ -20,6 +20,7 @@ export default function ProjectDeck({ projects = placeholder }) {
       className="projectDeck"
       direction="horizontal"
       align="center"
+      size="large"
     >
 
       {/* TO DO: carousel of cards on mobile */}

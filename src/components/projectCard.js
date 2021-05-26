@@ -1,26 +1,31 @@
 import {
   ArrowsAltOutlined, GithubOutlined, LinkOutlined
 } from '@ant-design/icons';
-import { Card, Divider, Popover, Skeleton, Space, Typography } from 'antd';
+import { Button, Card, Divider, Popover, Skeleton, Typography } from 'antd';
+
 const { Link, Paragraph } = Typography;
 const { Meta } = Card;
 
 export default function ProjectCard({ proj }) {
-
-  const ellipses =
-  {
-    rows: 2,
-    expandable: true,
-    symbol: 'more',
+  const descSettings = {
+    preview: {
+      rows: 2,
+      expandable: false
+    },
+    fullText: {
+      maxWidth: '70vh'
+    }
   }
 
   return (
     /* --- Hovering over card will show links to site & repo -- */
+    // getting card actions on hover was no bueno :(
     <Popover content={
       [
-        <Link href={proj.url} ><LinkOutlined key="ellipsis" /></Link>,
-        <Divider type="vertical" />,
-        <Link href={proj.repo}><GithubOutlined key="ellipsis" /></Link>
+        <Link href={proj.url} key="site" ><LinkOutlined /></Link>,
+        <Divider type="vertical" key="vr1" />,
+        <Divider type="vertical" key="vr2" />,
+        <Link href={proj.repo} key="repo"><GithubOutlined /></Link>
       ]
     }>
 
@@ -28,15 +33,20 @@ export default function ProjectCard({ proj }) {
         bordered={false}
         className="project"
         key={proj.title}
-        hoverable
         cover={<Skeleton.Image />}
       >
+        {/* Truncate longer description, button to expand */}
         <Meta title={proj.title}
-          description={
-            <Paragraph ellipsis={ellipses}>
+          description={[
+            <Paragraph ellipsis={descSettings.preview} key="descPreview">
               {proj.desc}
-            </Paragraph>
-          }
+            </Paragraph>,
+
+            // expanding text messes with sizing.. so new popover
+            <Popover content={proj.desc} trigger="click" key="descAll" overlayStyle={descSettings.fullText}>
+              <Button type="ghost"><ArrowsAltOutlined /></Button>
+            </Popover>
+          ]}
         >
         </Meta>
       </Card>

@@ -1,8 +1,24 @@
 import { FeaturedProjects, BackendProjects, FrontendProjects } from "./";
-import { Card, Space, Typography } from "antd";
+import { Card, Divider, Space, Typography } from "antd";
 const { Title } = Typography;
 
 export default function Body() {
+  const views = [
+    {
+      title: 'My Pride and Joy',
+      comp: <FeaturedProjects />
+    },
+
+    {
+      title: 'Backend Work',
+      comp: <BackendProjects />
+    },
+
+    {
+      title: 'Frontend Work',
+      comp: <FrontendProjects />
+    }
+  ]
   return (
     <div id="body">
       {/* Brand / Objective statement */}
@@ -30,9 +46,19 @@ export default function Body() {
         align="block"
         size="large"
       >
-        <FeaturedProjects />
-        <BackendProjects />
-        <FrontendProjects />
+
+        {
+          views.map((view, i) => {
+            return (
+              <div key={i}>
+                <Divider className="view-divider">
+                  <Title level={2} className="view-title">{view.title}</Title>
+                </Divider>
+                {view.comp}
+              </div>
+            )
+          })
+        }
       </Space>
     </div>
   )
