@@ -1,4 +1,4 @@
-import { FeaturedProjects, BackendProjects, FrontendProjects } from "./";
+import { FeaturedProjects, BackendProjects, FrontendProjects } from "./codeProjects";
 import { Card, Divider, Space, Typography } from "antd";
 const { Title } = Typography;
 
