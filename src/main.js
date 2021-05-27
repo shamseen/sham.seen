@@ -1,44 +1,35 @@
+import { DesktopSidebar, MobileSidebar, SidebarContent } from './views/sidebar/';
 import React, { useState } from 'react';
 import Body from "./views/body";
-import Sidebar from './views/sidebar';
-import { Button, Layout } from "antd";
+import { Layout } from "antd";
 import 'antd/dist/antd.css';
 import "./styles/main.scss";
 
-const { Sider, Content } = Layout;
-
+export const MobileViewContext = React.createContext();
 
 export default function Main() {
-
-    const [open, setOpen] = useState(true);
+    const [mobileView, setMobile] = useState(false);
+    const [showMobileSidebar, setShowSidebar] = useState(true);
 
     return (
         <Layout id="layout">
+            <MobileViewContext.Provider value={{
+                showDrawer: showMobileSidebar,
+                setDrawer: setShowSidebar,
+                mobileView,
+                sidebarContent: <SidebarContent />
+            }}>
 
-            {/* ---- Quick overview of my skills ---- */}
-            {/* TODO: responsive */}
-            <Sider
-                width="30%"
-                theme="light"
-                collapsible={true}
-                collapsed={!open}
-                collapsedWidth="0"
-                // breakpoint="sm"
-                // onBreakpoint={broken => {
-                //     console.log("broken: ", broken);
-                // }}
-                onCollapse={(collapsed, type) => {
-                    setOpen(!collapsed);
-                }}
-                className="gray-bg" >
-                <Sidebar />
-            </Sider>
+                {/* ---- Quick overview of my skills ---- */}
+                {mobileView ? <MobileSidebar /> : <DesktopSidebar setMobile={setMobile} />}
 
-            <Layout id="content-container">
-                <Content >
-                    <Body />
-                </Content>
-            </Layout>
-        </Layout >
+                {/* container scales body content with desktop sidebar */}
+                <Layout id="content-container">
+                    <Layout.Content>
+                        <Body />
+                    </Layout.Content>
+                </Layout>
+            </MobileViewContext.Provider>
+        </Layout>
     )
 }

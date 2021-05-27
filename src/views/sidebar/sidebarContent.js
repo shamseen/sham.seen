@@ -1,19 +1,15 @@
-import WebDevSkills from "./skillSnapshots/webDev";
-import BiomedSkills from "./skillSnapshots/biomed";
-import ContactForm from './contactForm';
-import { useState } from 'react';
+import WebDevSkills from "../skillSnapshots/webDev";
+import BiomedSkills from "../skillSnapshots/biomed";
+import { Avatar, Badge, Button, Space, Tabs, Typography } from "antd";
 import {
     CodeOutlined, CommentOutlined, GithubFilled,
     LinkedinOutlined, MailOutlined
 } from '@ant-design/icons';
-import { Avatar, Badge, Button, Space, Tabs, Tooltip, Typography } from "antd";
-const { TabPane } = Tabs;
 const { Title } = Typography;
-import "../styles/sidebar.scss";
+import "../../styles/sidebarContent.scss";
 
 
-export default function Sidebar() {
-    const [showModal, setModal] = useState(false);
+export default function SidebarContent() {
     /* --- Content --- */
     const contactLinks = [
         {
@@ -84,10 +80,10 @@ export default function Sidebar() {
             <Tabs defaultActiveKey="0" type="card" size='large' className="skillSnapshot">
                 {skillTabs.map((tab, i) => {
                     return (
-                        <TabPane tab={tab.name} key={i}>
+                        <Tabs.TabPane tab={tab.name} key={i}>
                             <Title level={5}>{tab.title}</Title>
                             {tab.content}
-                        </TabPane>
+                        </Tabs.TabPane>
                     );
                 })}
             </Tabs>

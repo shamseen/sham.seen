@@ -1,0 +1,14 @@
+@import "global";
+
+.ant-drawer-content-wrapper {
+  width: 90% !important;
+  max-width: 375px !important;
+  background-color: $gray;
+}
+
+.ant-drawer-body {
+  background-color: $gray;
+  padding: 0px;
+  overflow-y: scroll;
+  @include custom-scroll-bar($gray, $background-transp);
+}
