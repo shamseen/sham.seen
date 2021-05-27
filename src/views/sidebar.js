@@ -75,8 +75,8 @@ export default function Sidebar() {
                     {/* TO DO: pictures w credits */}
                 </Button.Group>
 
-                {/* -- Contact Me modal -- */}
-                <ContactForm showModal={showModal} setModal={setModal} />
+                {/* -- Contact Me modal (nonfunctional) -- */}
+                {/* <ContactForm showModal={showModal} setModal={setModal} /> */}
 
             </div>
 
