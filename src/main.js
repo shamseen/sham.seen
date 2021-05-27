@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import Body from "./views/body";
 import SidebarContent from './views/sidebarContent';
-import { Button, Layout } from "antd";
+import { Affix, Button, Layout } from "antd";
 import 'antd/dist/antd.css';
 import "./styles/main.scss";
+import MobileSidebar from './views/sidebar/mobileSidebar';
 
 const { Sider, Content } = Layout;
 
 
 export default function Main() {
-    const defaultWidth = '250px';
+    const defaultWidth = '375px';
     const [collapsed, setCollapsed] = useState(false);
     const [siderWidth, setWidth] = useState(defaultWidth);
+    const [mobileView, setMobile] = useState(false);
+    const [showDrawer, setDrawer] = useState(true);
 
     const showFullSidebar = (isSmallScreen) => {
         console.log("breakpt. small screen: ", isSmallScreen);
 
         // on mobile, sidebar should be full width
+        setMobile(isSmallScreen);
         setCollapsed(!isSmallScreen);
         setWidth(isSmallScreen ? '80%' : defaultWidth);
     }
@@ -25,7 +29,7 @@ export default function Main() {
 
             {/* ---- Quick overview of my skills ---- */}
             {/* TODO: responsive */}
-            <Sider
+            {/* <Sider
                 theme="light"
                 width={siderWidth}
                 collapsible={true}
@@ -39,10 +43,11 @@ export default function Main() {
                 }}
             >
                 <SidebarContent />
-            </Sider>
+            </Sider> */}
 
             <Layout id="content-container">
                 <Content >
+                    <MobileSidebar showDrawer={showDrawer} setDrawer={setDrawer} />
                     <Body />
                 </Content>
             </Layout>
