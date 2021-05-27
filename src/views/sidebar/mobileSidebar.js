@@ -3,11 +3,10 @@ import { MobileViewContext } from '../../main';
 import { Drawer } from 'antd';
 
 import { MenuFoldOutlined } from '@ant-design/icons';
-import SidebarContent from '../sidebarContent';
 import "../../styles/mobileSidebar.scss";
 
 export default function MobileSidebar() {
-  const { showDrawer, setDrawer } = useContext(MobileViewContext);
+  const { showDrawer, setDrawer, sidebarContent } = useContext(MobileViewContext);
 
   return (
     <Drawer
@@ -16,7 +15,7 @@ export default function MobileSidebar() {
       visible={showDrawer}
       closeIcon={<MenuFoldOutlined />}
     >
-      <SidebarContent />
+      {sidebarContent}
     </Drawer>
   )
 }

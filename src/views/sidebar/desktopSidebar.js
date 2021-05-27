@@ -1,7 +1,9 @@
-
+import { useContext } from 'react';
+import { MobileViewContext } from "../../main";
 import { Layout } from 'antd';
 
-export default function DesktopSidebar({ content, setMobile }) {
+export default function DesktopSidebar({ setMobile }) {
+  const { sidebarContent } = useContext(MobileViewContext);
 
   return (
     <Layout.Sider
@@ -12,7 +14,7 @@ export default function DesktopSidebar({ content, setMobile }) {
       breakpoint="lg" // antd breakpoint 992px
       onBreakpoint={isMobile => setMobile(isMobile)}
     >
-      {content}
+      {sidebarContent}
 
     </Layout.Sider>
   )
