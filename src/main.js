@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import Body from "./views/body";
 import SidebarContent from './views/sidebarContent';
-import { Affix, Button, Layout } from "antd";
+import { Layout } from "antd";
 import 'antd/dist/antd.css';
 import "./styles/main.scss";
 import MobileSidebar from './views/sidebar/mobileSidebar';
 
 const { Sider, Content } = Layout;
 
+export const MobileViewContext = React.createContext();
 
 export default function Main() {
     const defaultWidth = '375px';
@@ -15,6 +16,7 @@ export default function Main() {
     const [siderWidth, setWidth] = useState(defaultWidth);
     const [mobileView, setMobile] = useState(false);
     const [showDrawer, setDrawer] = useState(true);
+    const [container, setContainer] = useState(null);
 
     const showFullSidebar = (isSmallScreen) => {
         console.log("breakpt. small screen: ", isSmallScreen);
@@ -47,8 +49,12 @@ export default function Main() {
 
             <Layout id="content-container">
                 <Content >
-                    <MobileSidebar showDrawer={showDrawer} setDrawer={setDrawer} />
-                    <Body />
+                    <MobileViewContext.Provider value={{
+                        showDrawer, setDrawer, mobileView
+                    }}>
+                        <MobileSidebar />
+                        <Body />
+                    </MobileViewContext.Provider>
                 </Content>
             </Layout>
         </Layout >

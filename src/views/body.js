@@ -1,8 +1,15 @@
+import { MobileViewContext } from '../main';
+import { useContext } from 'react';
+
 import { FeaturedProjects, BackendProjects, FrontendProjects } from "./codeProjects";
-import { Card, Divider, Space, Typography } from "antd";
+import { Affix, Button, Card, Divider, Space, Typography } from "antd";
 const { Title } = Typography;
+import { UserSwitchOutlined } from '@ant-design/icons';
 
 export default function Body() {
+  const { showDrawer, setDrawer, mobileView } = useContext(MobileViewContext);
+
+
   const views = [
     {
       title: 'My Favorites',
@@ -21,6 +28,14 @@ export default function Body() {
   ]
   return (
     <div id="body">
+      {/* Mobile sidebar btn */}
+      <Affix offsetTop={60}>
+        <Button icon={<UserSwitchOutlined />} size="large"
+          onClick={() => setDrawer(!showDrawer)}
+        />
+      </Affix>
+
+
       {/* Brand / Objective statement */}
       <Card id="objectiveStmt" bordered={false}>
         <Title level={3}>sham•seen</Title>

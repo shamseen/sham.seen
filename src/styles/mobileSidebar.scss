@@ -1,7 +1,8 @@
 @import "global";
 
 .ant-drawer-content-wrapper {
-  width: 90%;
+  width: 90% !important;
+  max-width: 375px !important;
   background-color: $gray;
 }
 

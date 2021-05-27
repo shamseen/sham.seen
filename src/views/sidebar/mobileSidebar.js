@@ -1,27 +1,22 @@
-import { useState } from 'react';
-import { Affix, Button, Drawer } from 'antd';
+import { useContext } from 'react';
+import { MobileViewContext } from '../../main';
+import { Drawer } from 'antd';
+
+import { MenuFoldOutlined } from '@ant-design/icons';
 import SidebarContent from '../sidebarContent';
 import "../../styles/mobileSidebar.scss";
 
 export default function MobileSidebar() {
-  const [showDrawer, setDrawer] = useState(true);
+  const { showDrawer, setDrawer } = useContext(MobileViewContext);
 
   return (
-    <div id="sidebar-mobile">
-      <Affix top={10}>
-        <Button type="primary" onClick={() => setDrawer(!showDrawer)}>
-          Open
-        </Button>
-      </Affix>
-      <Drawer
-        placement="left"
-        closable={false}
-        onClose={() => setDrawer(!showDrawer)}
-        visible={showDrawer}
-        width='90%'
-      >
-        <SidebarContent />
-      </Drawer>
-    </div>
+    <Drawer
+      placement="left"
+      onClose={() => setDrawer(!showDrawer)}
+      visible={showDrawer}
+      closeIcon={<MenuFoldOutlined />}
+    >
+      <SidebarContent />
+    </Drawer>
   )
 }

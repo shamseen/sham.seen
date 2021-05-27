@@ -44,6 +44,16 @@ $width: 98%;
     padding: 2em;
     width: 100%;
 
+    // positioning mobile sidebar btn
+    .ant-affix {
+      position: fixed;
+      left: 0;
+
+      button {
+        width: 60px;
+      }
+    }
+
     #projects {
       width: 100%;
     }
