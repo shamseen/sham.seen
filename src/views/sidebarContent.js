@@ -9,10 +9,10 @@ import {
 import { Avatar, Badge, Button, Space, Tabs, Tooltip, Typography } from "antd";
 const { TabPane } = Tabs;
 const { Title } = Typography;
-import "../styles/sidebar.scss";
+import "../styles/sidebarContent.scss";
 
 
-export default function Sidebar() {
+export default function SidebarContent() {
     const [showModal, setModal] = useState(false);
     /* --- Content --- */
     const contactLinks = [

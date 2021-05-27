@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Body from "./views/body";
-import Sidebar from './views/sidebar';
+import SidebarContent from './views/sidebarContent';
 import { Button, Layout } from "antd";
 import 'antd/dist/antd.css';
 import "./styles/main.scss";
@@ -38,7 +38,7 @@ export default function Main() {
                     console.log(wasCollapsed, type);
                 }}
             >
-                <Sidebar />
+                <SidebarContent />
             </Sider>
 
             <Layout id="content-container">
