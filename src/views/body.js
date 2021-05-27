@@ -26,15 +26,18 @@ export default function Body() {
     //   comp: <FrontendProjects />
     // }
   ]
+
+  const mobileSidebarBtn =
+    <Affix offsetTop={60}>
+      <Button size="large"
+        icon={<UserSwitchOutlined />}
+        onClick={() => setDrawer(!showDrawer)} />
+    </Affix>
+
   return (
     <div id="body">
       {/* Mobile sidebar btn */}
-      <Affix offsetTop={60}>
-        <Button icon={<UserSwitchOutlined />} size="large"
-          onClick={() => setDrawer(!showDrawer)}
-        />
-      </Affix>
-
+      {mobileView ? mobileSidebarBtn : null}
 
       {/* Brand / Objective statement */}
       <Card id="objectiveStmt" bordered={false}>
