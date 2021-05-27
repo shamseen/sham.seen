@@ -69,9 +69,9 @@ export default function Sidebar() {
                             icon={link.icon} />;
                     })}
 
-                    <Tooltip title="Contact me!">
-                        <Button type="ghost" icon={<MailOutlined />} onClick={() => setModal(true)} />
-                    </Tooltip>
+                    {/* <Tooltip title="Contact me!">
+                        <Button disabled type="ghost" icon={<MailOutlined />} onClick={() => setModal(true)} />
+                    </Tooltip> */}
                     {/* TO DO: pictures w credits */}
                 </Button.Group>
 
