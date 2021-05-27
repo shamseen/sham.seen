@@ -44,6 +44,16 @@ $width: 98%;
     padding: 2em;
     width: 100%;
 
+    // positioning mobile sidebar btn
+    .ant-affix {
+      position: fixed;
+      left: 0;
+
+      button {
+        width: 60px;
+      }
+    }
+
     #projects {
       width: 100%;
     }
@@ -57,6 +67,14 @@ $width: 98%;
       color: $white;
     }
   }
+}
+
+.ant-layout-sider {
+  background-color: $gray;
+}
+
+.ant-layout-sider-children {
+  @include custom-scroll-bar($white, $background-transp);
 }
 
 #objectiveStmt {

@@ -1,26 +1,44 @@
+import { MobileViewContext } from '../main';
+import { useContext } from 'react';
+
 import { FeaturedProjects, BackendProjects, FrontendProjects } from "./codeProjects";
-import { Card, Divider, Space, Typography } from "antd";
+import { Affix, Button, Card, Divider, Space, Typography } from "antd";
 const { Title } = Typography;
+import { UserSwitchOutlined } from '@ant-design/icons';
 
 export default function Body() {
+  const { showDrawer, setDrawer, mobileView } = useContext(MobileViewContext);
+
+
   const views = [
     {
       title: 'My Favorites',
       comp: <FeaturedProjects />
     },
 
-    {
-      title: 'Backend Work',
-      comp: <BackendProjects />
-    },
+    // {
+    //   title: 'Backend Work',
+    //   comp: <BackendProjects />
+    // },
 
-    {
-      title: 'Frontend Work',
-      comp: <FrontendProjects />
-    }
+    // {
+    //   title: 'Frontend Work',
+    //   comp: <FrontendProjects />
+    // }
   ]
+
+  const mobileSidebarBtn =
+    <Affix offsetTop={60}>
+      <Button size="large"
+        icon={<UserSwitchOutlined />}
+        onClick={() => setDrawer(!showDrawer)} />
+    </Affix>
+
   return (
     <div id="body">
+      {/* Mobile sidebar btn */}
+      {mobileView ? mobileSidebarBtn : null}
+
       {/* Brand / Objective statement */}
       <Card id="objectiveStmt" bordered={false}>
         <Title level={3}>sham•seen</Title>
