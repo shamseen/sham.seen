@@ -1,0 +1,14 @@
+.contactBtns {
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: 15em;
+    max-width: 40vw;
+  }
+}
+
+label {
+  color: inherit;
+  font-weight: bold;
+}

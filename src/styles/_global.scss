@@ -27,14 +27,24 @@ $width: 98%;
   color: $comments;
 }
 
-.ant-card .ant-card-bordered {
-  background-color: $background;
-  border-radius: 50px;
-  color: white;
+[class*="ant-card"] {
+  // background-color: $background;
+  border-radius: 5px !important;
+  // color: white;
 }
 
 .anticon {
   font-size: 25px !important;
+}
+
+.ant-modal-content {
+  background-color: $gray;
+  border-color: $white;
+  color: $text-light;
+
+  .anticon {
+    font-size: 14px !important;
+  }
 }
 
 .ant-typography {
