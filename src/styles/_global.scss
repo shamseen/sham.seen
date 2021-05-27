@@ -37,6 +37,16 @@ $width: 98%;
   font-size: 25px !important;
 }
 
+.ant-modal-content {
+  background-color: $gray;
+  border-color: $white;
+  color: $text-light;
+
+  .anticon {
+    font-size: 14px !important;
+  }
+}
+
 .ant-typography {
   color: $white;
 }

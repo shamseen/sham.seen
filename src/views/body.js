@@ -5,7 +5,7 @@ const { Title } = Typography;
 export default function Body() {
   const views = [
     {
-      title: 'My Pride and Joy',
+      title: 'My Favorites',
       comp: <FeaturedProjects />
     },
 
@@ -47,18 +47,16 @@ export default function Body() {
         size="large"
       >
 
-        {
-          views.map((view, i) => {
-            return (
-              <div key={i}>
-                <Divider className="view-divider">
-                  <Title level={2} className="view-title">{view.title}</Title>
-                </Divider>
-                {view.comp}
-              </div>
-            )
-          })
-        }
+        {views.map((view, i) => {
+          return (
+            <div key={i}>
+              <Divider className="view-divider">
+                <Title level={2} className="view-title">{view.title}</Title>
+              </Divider>
+              {view.comp}
+            </div>
+          )
+        })}
       </Space>
     </div>
   )

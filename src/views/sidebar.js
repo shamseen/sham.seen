@@ -1,24 +1,35 @@
 import WebDevSkills from "./skillSnapshots/webDev";
 import BiomedSkills from "./skillSnapshots/biomed";
-import { CodeOutlined, GithubFilled, LinkedinFilled } from '@ant-design/icons';
-import { Avatar, Badge, Button, Space, Tabs, Typography } from "antd";
+import ContactForm from './contactForm';
+import { useState } from 'react';
+import {
+    CodeOutlined, CommentOutlined, GithubFilled,
+    LinkedinOutlined, MailOutlined
+} from '@ant-design/icons';
+import { Avatar, Badge, Button, Space, Tabs, Tooltip, Typography } from "antd";
 const { TabPane } = Tabs;
-const { Link, Title } = Typography;
+const { Title } = Typography;
 import "../styles/sidebar.scss";
 
 
 export default function Sidebar() {
+    const [showModal, setModal] = useState(false);
     /* --- Content --- */
     const contactLinks = [
         {
-            name: 'github',
+            name: 'GitHub',
             url: 'https://github.com/shamseen',
             icon: <GithubFilled />
         },
         {
-            name: 'linkedin',
+            name: 'LinkedIn',
             url: 'https://www.linkedin.com/in/shamseenr/',
-            icon: <LinkedinFilled />
+            icon: <LinkedinOutlined />
+        },
+        {
+            name: 'Bioinformatics StackExchange',
+            url: 'https://bioinformatics.stackexchange.com/users/12216/shamseen',
+            icon: <CommentOutlined />
         }
         // TODO: contact me btn
     ]
@@ -37,18 +48,18 @@ export default function Sidebar() {
     ]
 
     return (
-        <Space direction="vertical" id="sidebar" className="gray-bg">
-
-            {/* Contact Info */}
-            <Badge count={"CSM®"} title="Certified ScrumMaster®" offset={[-5, 90]}>
-                <Avatar
-                    size={100}
-                    src="./moi.jpg"
-                    alt="avatar image"
-                />
-            </Badge>
+        <Space direction="vertical" id="sidebar" className="gray-bg" size="small">
+            {/* -- Contact Info -- */}
             <div id="contact">
-                <Title level={3} style={{ flexBasis: '100%' }}>Shamseen Rahman</Title>
+                <Badge count={"CSM®"} title="Certified ScrumMaster®" offset={[-5, 90]}>
+                    <Avatar
+                        size={100}
+                        src="./moi.jpg"
+                        alt="avatar image"
+                    />
+                </Badge>
+
+                <Title level={3} style={{ flexBasis: '100%', marginTop: '0.5em' }}>Shamseen Rahman</Title>
 
                 <Button.Group>
                     {contactLinks.map(link => {
@@ -57,10 +68,19 @@ export default function Sidebar() {
                             key={link.name}
                             icon={link.icon} />;
                     })}
+
+                    <Tooltip title="Contact me!">
+                        <Button type="ghost" icon={<MailOutlined />} onClick={() => setModal(true)} />
+                    </Tooltip>
+                    {/* TO DO: pictures w credits */}
                 </Button.Group>
+
+                {/* -- Contact Me modal -- */}
+                <ContactForm showModal={showModal} setModal={setModal} />
+
             </div>
 
-            {/* Skill snapshot */}
+            {/* -- Skill snapshots -- */}
             <Tabs defaultActiveKey="0" type="card" size='large' className="skillSnapshot">
                 {skillTabs.map((tab, i) => {
                     return (
