@@ -9,15 +9,15 @@ export default function Body() {
       comp: <FeaturedProjects />
     },
 
-    {
-      title: 'Backend Work',
-      comp: <BackendProjects />
-    },
+    // {
+    //   title: 'Backend Work',
+    //   comp: <BackendProjects />
+    // },
 
-    {
-      title: 'Frontend Work',
-      comp: <FrontendProjects />
-    }
+    // {
+    //   title: 'Frontend Work',
+    //   comp: <FrontendProjects />
+    // }
   ]
   return (
     <div id="body">
