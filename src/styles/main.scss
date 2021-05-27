@@ -69,6 +69,14 @@ $width: 98%;
   }
 }
 
+.ant-layout-sider {
+  background-color: $gray;
+}
+
+.ant-layout-sider-children {
+  @include custom-scroll-bar($white, $background-transp);
+}
+
 #objectiveStmt {
   background-color: $gray;
   margin-bottom: 1em;
