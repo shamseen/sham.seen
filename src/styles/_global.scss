@@ -27,10 +27,10 @@ $width: 98%;
   color: $comments;
 }
 
-.ant-card .ant-card-bordered {
-  background-color: $background;
-  border-radius: 50px;
-  color: white;
+[class*="ant-card"] {
+  // background-color: $background;
+  border-radius: 5px !important;
+  // color: white;
 }
 
 .anticon {
