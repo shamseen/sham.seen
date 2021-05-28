@@ -2,9 +2,10 @@ import WebDevSkills from "../skillSnapshots/webDev";
 import BiomedSkills from "../skillSnapshots/biomed";
 import { Avatar, Badge, Button, Space, Tabs, Typography } from "antd";
 import {
-    CodeOutlined, CommentOutlined, GithubFilled,
-    LinkedinOutlined, MailOutlined
+    CheckOutlined, CodeOutlined, CommentOutlined,
+    GithubFilled, LinkedinOutlined, MailOutlined
 } from '@ant-design/icons';
+
 const { Title } = Typography;
 import "../../styles/sidebarContent.scss";
 
@@ -33,13 +34,11 @@ export default function SidebarContent() {
     const skillTabs = [
         {
             name: <CodeOutlined />,
-            title: 'Experience',
-            content: <WebDevSkills />
+            content: <WebDevSkills skillIcon={<CheckOutlined />} />
         },
         {
             name: '🧬',
-            title: 'Experience',
-            content: <BiomedSkills />
+            content: <BiomedSkills skillIcon={<CheckOutlined />} />
         }
     ]
 
@@ -81,7 +80,6 @@ export default function SidebarContent() {
                 {skillTabs.map((tab, i) => {
                     return (
                         <Tabs.TabPane tab={tab.name} key={i}>
-                            <Title level={5}>{tab.title}</Title>
                             {tab.content}
                         </Tabs.TabPane>
                     );
