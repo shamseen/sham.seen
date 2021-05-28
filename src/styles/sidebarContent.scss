@@ -3,13 +3,19 @@
 .ant-badge-count {
   background-color: $text-light !important;
 }
+
 // <Space /> uses flex-direction=column
 #sidebar {
   display: flex;
   align-items: center;
   height: $height;
-  // overflow-y: scroll;
-  // @include custom-scroll-bar($gray, $background-transp);
+
+  .ant-divider {
+    border-top-width: 2px;
+  }
+  .anticon-check {
+    font-size: 14px !important;
+  }
 
   // for whatever reason, avatar doesn't want to center
   .ant-space-item {
@@ -34,6 +40,10 @@
   .ant-typography {
     color: $comments;
     text-align: center;
+  }
+
+  .skillList {
+    line-height: 30px;
   }
 }
 
