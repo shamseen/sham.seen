@@ -11,9 +11,10 @@ export default function WebSevSkills({ skillIcon }) {
     + `&hide_border=true`;
 
   const skills = [
-    'React, SCSS, Antd, AngularJS',
+    'React, SCSS, Bootstrap 4, AngularJS',
     'Node, Express, RESTful APIs, ASP.NET',
-    'MongoDB, MySQL, PostgreSQL'
+    'MongoDB, MySQL, PostgreSQL',
+    'Agile workflow, Ant Design, @material-ui'
   ]
 
   return (<div>
