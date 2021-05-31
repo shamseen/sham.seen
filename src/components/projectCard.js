@@ -34,10 +34,6 @@ export default function ProjectCard({ proj }) {
       bordered={false}
       className="project-card"
       key={proj.title}
-      cover={
-        !proj.image ? <Skeleton.Image />
-          : <Image src={proj.image} alt={proj.title} preview={false} />
-      }
       actions={actions}
       onMouseEnter={() => setActions(allCardActions)}
       onMouseLeave={() => setActions([<LineOutlined />])}
@@ -50,6 +46,15 @@ export default function ProjectCard({ proj }) {
           </Paragraph>}
       >
       </Meta>
+
+      {/* Image with caption on hover*/}
+      <Popover content={proj.desc} key="descAll" overlayStyle={descSettings.fullText}>
+        {!proj.image ? <Skeleton.Image />
+          : <Image src={proj.image} alt={proj.title} />
+        }
+      </Popover>
+
+
     </Card>
   )
 }
