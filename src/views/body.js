@@ -45,8 +45,8 @@ export default function Body() {
         <div>
           <i>noun</i>
           <ol>
-            <li>Full-stack MERN developer; biomedical researcher in tissue engineering; a double threat.</li>
-            <li>Web apps that improve research processes and accessibility to non-coders (see: .pnGCAT).</li>
+            <li>Full-stack JavaScript developer; biomedical researcher and tissue engineer; a double threat.</li>
+            <li>MERN web apps that improve research processes and accessibility to non-coders (see: .pnGCAT).</li>
           </ol>
         </div>
         <div>

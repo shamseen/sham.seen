@@ -42,6 +42,15 @@
     text-align: center;
   }
 
+  .biomed-list {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    #genie-icon {
+      height: 30vh;
+    }
+  }
   .skillList {
     line-height: 30px;
   }

@@ -1,12 +1,19 @@
-import { Divider, Skeleton, Tag, Tooltip, Typography } from 'antd';
+import { Divider, Image, Skeleton, Tag, Tooltip, Typography } from 'antd';
 const { Title } = Typography;
 
 export default function BiomedSkills({ skillIcon }) {
 
+  // const skills = [
+  //   'Tissue culture, Organ on a Chip',
+  //   'RT-PCR, ELISA, Western Blot',
+  //   'SBOL v2, SDS-PAGE'
+  // ]
+
   const skills = [
-    'Tissue culture, Organ on a Chip',
-    'RT-PCR, ELISA, Western Blot',
-    'SBOL v2, SDS-PAGE'
+    'Tissue culture',
+    'Organ on a Chip',
+    'RT-PCR', 'ELISA', 'SDS-PAGE', 'Western Blot',
+    'SBOL v2',
   ]
 
   const exps = [
@@ -29,13 +36,22 @@ export default function BiomedSkills({ skillIcon }) {
       })} */}
 
       <Divider>Skills</Divider>
-      {skills.map((skill, i) => {
-        return (
-          <div className="skillList" key={i}>
-            {skillIcon} {skill}
-          </div>
-        );
-      })}
+      <div className="biomed-list">
+        <img src="favicon.png" alt="preliminary logo" id="genie-icon" />
+        {/* <Image src='favicon.png' alt="logo" preview={false} id="genie-icon" /> */}
+        <div>
+          {skills.map((skill, i) => {
+            return (
+              <div className="skillList" key={i}>
+                {skillIcon} {skill}
+              </div>
+            );
+          })}
+        </div>
+      </div>
       <Divider />
+
+
+
     </div>)
 }

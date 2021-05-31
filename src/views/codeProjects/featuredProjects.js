@@ -5,7 +5,7 @@ export default function FeaturedProjects() {
     {
       title: ".pnGCAT",
       image: 'https://repository-images.githubusercontent.com/366115065/78fafe00-be78-11eb-9718-45e030ca0001',
-      desc: `My pride and joy. Genetic engineers can create diagrams (.pnGCATs!) for DNA sequences using SBOL Visual Ontology symbols. Users can search the European Nucleotide Archive and any modifications to the .pnGCAT will be available for everyone to use. In the future, the .pnGCAT webservice will leverage databases such as SynbioHub, GenBank, etc.`,
+      desc: `My pride and joy. Users earch and diagram DNA Sequences (.pnGCATs!) from the European Nucleotide Archive. This integrates SBOL Visual Ontology symbols, a systematic approach to diagramming synthetic genetic designs. Any modifications to the .pnGCAT will be available for everyone to use. In the future, the .pnGCAT webservice will leverage databases such as SynbioHub, GenBank, etc.`,
       url: 'https://pngcat.netlify.app/',
       repo: 'https://github.com/shamseen/pngcat-client'
     },
