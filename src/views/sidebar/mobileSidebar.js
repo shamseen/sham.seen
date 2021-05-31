@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { MobileViewContext } from '../../main';
 import { Drawer } from 'antd';
 
-import { MenuFoldOutlined } from '@ant-design/icons';
 import "../../styles/mobileSidebar.scss";
 
 export default function MobileSidebar() {
@@ -13,7 +12,7 @@ export default function MobileSidebar() {
       placement="left"
       onClose={() => setDrawer(!showDrawer)}
       visible={showDrawer}
-      closeIcon={<MenuFoldOutlined />}
+    // closeIcon={<MenuFoldOutlined />}
     >
       {sidebarContent}
     </Drawer>
