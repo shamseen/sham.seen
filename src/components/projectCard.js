@@ -34,7 +34,7 @@ export default function ProjectCard({ proj }) {
     /* --- Hovering over card will show links to site & repo -- */
     <Card
       bordered={false}
-      className={`project-card${proj.expand ? ' expand' : ''}`}
+      className='project-card'
       key={proj.title}
       actions={actions}
       onMouseEnter={() => setActions(allCardActions)}
@@ -44,7 +44,7 @@ export default function ProjectCard({ proj }) {
       {/* (overriden if it looks poopoo in masonry layout) */}
       <Meta title={proj.title}
         description={
-          (proj.expand ? proj.desc
+          (proj.expanded ? proj.desc
             : <Paragraph ellipsis={descSettings.preview} key="descPreview">
               {proj.desc}
             </Paragraph>)}
@@ -53,7 +53,7 @@ export default function ProjectCard({ proj }) {
 
       <br />
       {/* Image with caption on hover IF caption isn't expanded*/}
-      {proj.expand ? descSettings.img
+      {proj.expanded ? descSettings.img
         : <Popover content={proj.desc} key="descAll" overlayStyle={descSettings.fullText}>
           {descSettings.img}
         </Popover>

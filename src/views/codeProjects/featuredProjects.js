@@ -2,15 +2,15 @@ import ProjectDeck from "../../components/projectDeck";
 
 export default function FeaturedProjects() {
 
-  // item.expand for masonry layout of cards
+  // item.expanded for masonry layout of cards
   const projects = [
     {
       title: ".pnGCAT",
       image: 'https://repository-images.githubusercontent.com/366115065/78fafe00-be78-11eb-9718-45e030ca0001',
-      desc: `My pride and joy. Users search and diagram DNA Sequences (.pnGCATs!) from the European Nucleotide Archive. This integrates SBOL Visual Ontology symbols, a systematic approach to diagramming synthetic genetic designs. Any modifications to the .pnGCAT will be available for everyone to use. In the future, the .pnGCAT webservice will leverage databases such as SynbioHub, GenBank, etc.\n`,
+      desc: `My pride and joy. Users search and diagram DNA Sequences (.pnGCATs!) from the European Nucleotide Archive. This integrates SBOL Visual Ontology symbols, a systematic approach to diagramming synthetic genetic designs. Any modifications to the .pnGCAT will be available for everyone to use. In the future, the .pnGCAT webservice will leverage databases such as SynbioHub, GenBank, etc.`,
       url: 'https://pngcat.netlify.app/',
       repo: 'https://github.com/shamseen/pngcat-client',
-      expand: true
+      expanded: true
     },
     {
       title: "Ludo",
@@ -18,7 +18,7 @@ export default function FeaturedProjects() {
       desc: `An online multiplayer rendition of Ludo or Pachisi, a classic board game from the Indian subcontinent. Players race to get all their tokens around the board and through to the win space! Styled with @material-ui and SCSS; leverages the boardgame.io game engine for state management and online multiplayer functionality. In the future, it will use antd components and bgio's Lobby functionality. This is the most complex code I've ever written omg`,
       url: 'https://shamseen.github.io/ludo-boardgame-js/',
       repo: 'https://github.com/shamseen/ludo-boardgame-js/tree/multiplayer',
-      expand: false
+      expanded: false
     },
     {
       title: "Bookmark'd",
@@ -26,7 +26,7 @@ export default function FeaturedProjects() {
       desc: `My first stab at MERN stack: an online manager for your favorite webpages. Styled with @material-ui and SCSS and features async calls to a custom express API utilizing Mongoose ODM.`,
       url: 'https://bookmarkd-by-sham.netlify.app/',
       repo: 'https://github.com/shamseen/bookmarkd-client-MERN',
-      expand: false
+      expanded: false
     },
   ]
 

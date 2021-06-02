@@ -17,3 +17,17 @@ img {
     color: inherit;
   }
 }
+
+// masonry src: https://w3bits.com/flexbox-masonry/
+// .masonry {
+//   display: flex;
+//   flex-flow: column wrap;
+//   flex-basis: 40rem;
+//   max-height: 800px;
+//   margin-left: -8px; /* Adjustment for the gutter */
+//   // width: 100%;
+
+//   .project-card {
+//     margin: 0 8px 8px 0; /* Some gutter */
+//   }
+// }
