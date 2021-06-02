@@ -12,7 +12,7 @@ export default function WebSevSkills({ skillIcon }) {
 
   const skills = [
     'React, SCSS, Bootstrap 4, AngularJS',
-    'Node, Express, RESTful APIs, ASP.NET',
+    'Node, Express, RESTful APIs, C#, ASP.NET',
     'MongoDB, MySQL, PostgreSQL',
     'Agile workflow, Ant Design, @material-ui'
   ]
