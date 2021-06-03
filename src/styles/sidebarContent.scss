@@ -76,8 +76,7 @@
   flex-direction: column;
   align-items: center;
 
-  button {
+  .ant-btn {
     background-color: $white-transp;
-    width: 80%;
   }
 }
