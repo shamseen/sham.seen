@@ -12,7 +12,6 @@ export default function MobileSidebar() {
       placement="left"
       onClose={() => setDrawer(!showDrawer)}
       visible={showDrawer}
-    // closeIcon={<MenuFoldOutlined />}
     >
       {sidebarContent}
     </Drawer>
