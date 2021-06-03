@@ -17,7 +17,9 @@ export default function ProjectCard({ proj }) {
     },
     fullText: {
       maxWidth: '70vh'
-    }
+    },
+    img: !proj.image ? <Skeleton.Image />
+      : <Image src={proj.image} alt={proj.title} />
   };
 
   const allCardActions = [
@@ -32,28 +34,30 @@ export default function ProjectCard({ proj }) {
     /* --- Hovering over card will show links to site & repo -- */
     <Card
       bordered={false}
-      className="project-card"
+      className='project-card'
       key={proj.title}
       actions={actions}
       onMouseEnter={() => setActions(allCardActions)}
       onMouseLeave={() => setActions([<LineOutlined />])}
     >
       {/* Truncate longer description, actions has a btn to expand */}
+      {/* (overriden if it looks poopoo in masonry layout) */}
       <Meta title={proj.title}
         description={
-          <Paragraph ellipsis={descSettings.preview} key="descPreview">
-            {proj.desc}
-          </Paragraph>}
+          (proj.expanded ? proj.desc
+            : <Paragraph ellipsis={descSettings.preview} key="descPreview">
+              {proj.desc}
+            </Paragraph>)}
       >
       </Meta>
 
-      {/* Image with caption on hover*/}
-      <Popover content={proj.desc} key="descAll" overlayStyle={descSettings.fullText}>
-        {!proj.image ? <Skeleton.Image />
-          : <Image src={proj.image} alt={proj.title} />
-        }
-      </Popover>
-
+      <br />
+      {/* Image with caption on hover IF caption isn't expanded*/}
+      {proj.expanded ? descSettings.img
+        : <Popover content={proj.desc} key="descAll" overlayStyle={descSettings.fullText}>
+          {descSettings.img}
+        </Popover>
+      }
 
     </Card>
   )

@@ -1,13 +1,14 @@
 import WebDevSkills from "../skillSnapshots/webDev";
 import BiomedSkills from "../skillSnapshots/biomed";
-import { Avatar, Badge, Button, Space, Tabs, Typography } from "antd";
+import { Avatar, Badge, Button, Image, Space, Tabs, Typography } from "antd";
 import {
-    CheckOutlined, CodeOutlined, CommentOutlined,
+    CheckOutlined, CodeOutlined, CommentOutlined, DownloadOutlined,
     GithubFilled, LinkedinOutlined, MailOutlined
 } from '@ant-design/icons';
 
 const { Title } = Typography;
 import "../../styles/sidebarContent.scss";
+import Resume from "../skillSnapshots/resume";
 
 
 export default function SidebarContent() {
@@ -38,7 +39,12 @@ export default function SidebarContent() {
         },
         {
             name: '🧬',
+            // name: <Image src="./assets/dnaIcon_nounprj.svg" preview={false} />,
             content: <BiomedSkills skillIcon={<CheckOutlined />} />
+        },
+        {
+            name: 'Résumé',
+            content: <Resume icon={<DownloadOutlined />} />
         }
     ]
 
@@ -49,7 +55,7 @@ export default function SidebarContent() {
                 <Badge count={"CSM®"} title="Certified ScrumMaster®" offset={[-5, 90]}>
                     <Avatar
                         size={100}
-                        src="./moi.jpg"
+                        src="./assets/moi.jpg"
                         alt="avatar image"
                     />
                 </Badge>

@@ -1,4 +1,6 @@
 import ProjectCard from './projectCard';
+import { MobileViewContext } from '../main';
+import { useContext } from 'react';
 import "../styles/projectDeck.scss";
 
 const placeholder = new Array(3).fill(
@@ -14,9 +16,11 @@ const placeholder = new Array(3).fill(
 export default function ProjectDeck({ projects = placeholder }) {
   // Desktop: row of cards
   // Mobile: carousel of cards
+  const { mobileView } = useContext(MobileViewContext);
 
   return (
-    <div className="project-deck">
+    // adding masonry layout if desktop
+    <div className={`project-deck${mobileView ? null : ' masonry'}`}>
       {/* TO DO: carousel of cards on mobile */}
       {
         projects.map(p => {
