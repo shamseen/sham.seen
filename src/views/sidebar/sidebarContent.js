@@ -39,6 +39,7 @@ export default function SidebarContent() {
         },
         {
             name: '🧬',
+            // name: <Image src="./assets/dnaIcon_nounprj.svg" preview={false} />,
             content: <BiomedSkills skillIcon={<CheckOutlined />} />
         },
         {
@@ -54,7 +55,7 @@ export default function SidebarContent() {
                 <Badge count={"CSM®"} title="Certified ScrumMaster®" offset={[-5, 90]}>
                     <Avatar
                         size={100}
-                        src="./moi.jpg"
+                        src="./assets/moi.jpg"
                         alt="avatar image"
                     />
                 </Badge>

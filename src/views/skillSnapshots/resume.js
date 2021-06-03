@@ -15,10 +15,10 @@ export default function Resume({ icon }) {
         <Image
 
           // transparent bg when on sidebar
-          src="./resume_transparent.png"
+          src="./assets/resume_transparent.png"
 
           // opaque bg if user clicks on image
-          preview={{ src: "./RahmanShamseen_web.png" }}
+          preview={{ src: "./assets/RahmanShamseen_web.png" }}
 
           alt="Résumé preview" />
       </Badge>
