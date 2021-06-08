@@ -58,13 +58,13 @@ $width: 98%;
       width: 100%;
     }
 
+    .title {
+      color: $white;
+    }
+
     .view-divider {
       border-color: $white;
       border-width: 3px;
-    }
-
-    .view-title {
-      color: $white;
     }
   }
 }

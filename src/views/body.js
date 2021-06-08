@@ -1,31 +1,13 @@
 import { MobileViewContext } from '../main';
 import { useContext } from 'react';
 
-import { FeaturedProjects, BackendProjects, FrontendProjects } from "./codeProjects";
-import { Affix, Button, Card, Divider, Space, Typography } from "antd";
+import ProjectsPage from './ProjectsPage';
+import { Affix, Button, Card, Space, Typography } from "antd";
 const { Title } = Typography;
 import { UserSwitchOutlined } from '@ant-design/icons';
 
 export default function Body() {
   const { showDrawer, setDrawer, mobileView } = useContext(MobileViewContext);
-
-
-  const views = [
-    {
-      title: 'My Favorites',
-      comp: <FeaturedProjects />
-    },
-
-    // {
-    //   title: 'Backend Work',
-    //   comp: <BackendProjects />
-    // },
-
-    // {
-    //   title: 'Frontend Work',
-    //   comp: <FrontendProjects />
-    // }
-  ]
 
   const mobileSidebarBtn =
     <Affix offsetTop={60}>
@@ -65,7 +47,9 @@ export default function Body() {
         size="large"
       >
 
-        {views.map((view, i) => {
+        <ProjectsPage />
+
+        {/* {views.map((view, i) => {
           return (
             <div key={i}>
               <Divider className="view-divider">
@@ -74,7 +58,7 @@ export default function Body() {
               {view.comp}
             </div>
           )
-        })}
+        })} */}
       </Space>
     </div>
   )
