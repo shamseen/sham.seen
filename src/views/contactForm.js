@@ -1,5 +1,6 @@
 import { Form, Input, message, Modal, Select } from 'antd';
 import { useState } from 'react';
+import { GoogleSpreadsheet } from 'google-spreadsheet';
 import "../styles/contactForm.scss";
 const { Item } = Form;
 const { Option } = Select;
@@ -9,11 +10,24 @@ const { Option } = Select;
 // https://ant.design/components/modal/#components-modal-demo-async
 
 export default function ContactForm({ showModal, setModal }) {
+  const [gapiLib, startGapi] = useState(null);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm(); // antd docs say to use this i guess
 
-  const handleSend = (e) => {
+  // const initGapi = async () => {
+  //   try {
+  //     // importing Google API client library
+  //     // src: https://gist.github.com/djD-REK/07d86e495bc772133907b63317c3ea56
+  //     const response = await ('https://apis.google.com/js/client.js');
+  //     const script = response.text()
+  //   }
 
+  // }
+  // const writeToSheet = () => {
+
+  // }
+
+  const handleSend = (e) => {
 
     form.validateFields()
 
