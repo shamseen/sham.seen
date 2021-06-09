@@ -46,19 +46,7 @@ export default function Body() {
         align="block"
         size="large"
       >
-
         <ProjectsPage />
-
-        {/* {views.map((view, i) => {
-          return (
-            <div key={i}>
-              <Divider className="view-divider">
-                <Title level={2} className="view-title">{view.title}</Title>
-              </Divider>
-              {view.comp}
-            </div>
-          )
-        })} */}
       </Space>
     </div>
   )
