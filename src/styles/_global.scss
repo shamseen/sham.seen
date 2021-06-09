@@ -8,11 +8,6 @@
   letter-spacing: 1px;
 }
 
-body {
-  overflow-y: scroll;
-  @include custom-scroll-bar();
-}
-
 [class*="ant-card"] {
   // background-color: $background;
   border-radius: 5px !important;

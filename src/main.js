@@ -20,14 +20,14 @@ export default function Main() {
             <Header id="navbar" theme='light' className="header">
                 {/* <div className="logo" /> */}
                 <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                    <Menu.Item key="1">nav 1</Menu.Item>
-                    <Menu.Item key="2">nav 2</Menu.Item>
-                    <Menu.Item key="3">nav 3</Menu.Item>
+                    <Menu.Item key="1">Home</Menu.Item>
+                    <Menu.Item key="2">Portfolio</Menu.Item>
+                    <Menu.Item key="3">Background</Menu.Item>
                 </Menu>
             </Header>
 
             {/* -- Rest of site, nested under navbar -- */}
-            <Layout id="content">
+            <Layout id="content-container">
                 <MobileViewContext.Provider value={{
                     showDrawer: showMobileSidebar,
                     setDrawer: setShowSidebar,
@@ -38,7 +38,7 @@ export default function Main() {
                     {mobileView ? <MobileSidebar /> : <DesktopSidebar setMobile={setMobile} />}
 
                     {/* -- Main content, nested under sidebar-- */}
-                    <Layout id="content-container">
+                    <Layout id="content">
 
                         {/* -- Body -- */}
                         <Content id="body-container">
