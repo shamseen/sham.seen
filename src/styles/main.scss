@@ -1,26 +1,44 @@
-@import "global";
+@use "vars" as *;
+// @use "global";
 
-/* Spacing */
-$height: 100%;
-$width: 98%;
-
+/* -- Top level elements -- */
+// body {
+//   overflow-y: hidden;
+// }
 #layout {
-  height: 95vh;
+  // height: 95vh;
   overflow-y: hidden;
 }
 
-#content-container {
+.header {
+  height: 40px;
+
+  .ant-menu {
+    line-height: 40px;
+  }
+}
+
+// #content-container {
+//   overflow-y: scroll;
+//   @include custom-scroll-bar();
+// }
+
+/* -- Everythinng else -- */
+
+#body-container {
   background: $background url("../assets/catamaran.jpg") no-repeat;
   background-size: cover;
   background-position: center bottom;
   border-radius: 3px;
-  height: 95vh;
+  // height: 95vh;
   width: 95vw;
   margin: 2vh 2vw;
   padding: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  overflow: initial;
 }
 
 .ant-layout-content {
@@ -28,8 +46,8 @@ $width: 98%;
   flex-flow: row wrap;
   width: 100%;
 
-  overflow-y: scroll;
-  @include custom-scroll-bar();
+  // overflow-y: scroll;
+  // @include custom-scroll-bar();
 
   #body {
     // background-color: $background-transp;

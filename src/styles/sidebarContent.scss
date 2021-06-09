@@ -1,4 +1,4 @@
-@import "global";
+@use "vars" as *;
 
 .ant-badge-count {
   background-color: $text-light !important;
