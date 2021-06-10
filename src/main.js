@@ -1,7 +1,8 @@
 import { DesktopSidebar, MobileSidebar, SidebarContent } from './views/sidebar/';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
-import Body from "./views/body";
-import { Layout, Menu } from "antd";
+import Pages from './views';
+import { Layout } from "antd";
 const { Content, Header, Footer } = Layout;
 
 import 'antd/dist/antd.css';
@@ -17,13 +18,12 @@ export default function Main() {
         <Layout id="layout">
 
             {/* -- Navbar -- */}
-            <Header id="navbar" theme='light' className="header">
-                {/* <div className="logo" /> */}
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                    <Menu.Item key="1">Home</Menu.Item>
-                    <Menu.Item key="2">Portfolio</Menu.Item>
-                    <Menu.Item key="3">Background</Menu.Item>
-                </Menu>
+            <Header>
+                <nav>
+                    <NavLink exact to="/">Home</NavLink>
+                    <NavLink to="/portfolio">Portfolio</NavLink>
+                    <NavLink to="/background">Background</NavLink>
+                </nav>
             </Header>
 
             {/* -- Rest of site, nested under navbar -- */}
@@ -40,9 +40,19 @@ export default function Main() {
                     {/* -- Main content, nested under sidebar-- */}
                     <Layout id="content">
 
-                        {/* -- Body -- */}
+                        {/* -- Body / Pages -- */}
                         <Content id="body-container">
-                            <Body />
+                            <Switch>
+                                <Route exact path="/" render={() =>
+                                    <Pages.Body page={<Pages.Home />} />}
+                                />
+                                <Route exact path="/Background" render={() =>
+                                    <Pages.Body page={<Pages.Background />} />}
+                                />
+                                <Route exact path="/Portfolio" render={() =>
+                                    <Pages.Body page={<Pages.Portfolio />} />}
+                                />
+                            </Switch>
                         </Content>
 
                         {/* -- Footer, nested under sidebar-- */}

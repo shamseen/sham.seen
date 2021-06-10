@@ -1,12 +1,11 @@
 import { MobileViewContext } from '../main';
 import { useContext } from 'react';
 
-import ProjectsPage from './ProjectsPage';
 import { Affix, Button, Card, Space, Typography } from "antd";
 const { Title } = Typography;
 import { UserSwitchOutlined } from '@ant-design/icons';
 
-export default function Body() {
+export default function Body({ page }) {
   const { showDrawer, setDrawer, mobileView } = useContext(MobileViewContext);
 
   const mobileSidebarBtn =
@@ -21,24 +20,6 @@ export default function Body() {
       {/* Mobile sidebar btn */}
       {mobileView ? mobileSidebarBtn : null}
 
-      {/* Brand / Objective statement */}
-      <Card id="objectiveStmt" bordered={false}>
-        <Title level={3}>sham•seen</Title>
-        <div>
-          <i>noun</i>
-          <ol>
-            <li>Full-stack JavaScript developer; biomedical researcher and tissue engineer; a double threat.</li>
-            <li>MERN web apps that improve research processes and accessibility to non-coders (see: .pnGCAT).</li>
-          </ol>
-        </div>
-        <div>
-          <i>adjective</i>
-          <ul style={{ listStyleType: "none" }}>
-            <li>Good workflow management; meticulous for best practices.</li>
-          </ul>
-        </div>
-      </Card>
-
       {/* Views */}
       <Space
         id="projects"
@@ -46,7 +27,7 @@ export default function Body() {
         align="block"
         size="large"
       >
-        <ProjectsPage />
+        {page}
       </Space>
     </div>
   )

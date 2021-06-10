@@ -9,7 +9,7 @@ export default function DesktopSidebar({ setMobile }) {
     <Layout.Sider
       theme="light"
       width='375px'
-      collapsible={true}
+      collapsible={false}
       collapsedWidth="0"
       breakpoint="lg" // antd breakpoint 992px
       onBreakpoint={isMobile => setMobile(isMobile)}
