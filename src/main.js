@@ -10,58 +10,60 @@ import "./styles/main.scss";
 export const MobileViewContext = React.createContext();
 
 export default function Main() {
-    const [mobileView, setMobile] = useState(false);
-    const [showMobileSidebar, setShowSidebar] = useState(true);
+  const [mobileView, setMobile] = useState(false);
+  const [showMobileSidebar, setShowSidebar] = useState(true);
 
-    return (
-        <Layout id="layout">
+  return (
+    <Layout id="layout">
 
-            {/* -- Navbar -- */}
-            <Header>
-                <nav>
-                    <NavLink exact to="/">Home</NavLink>
-                    <NavLink to="/portfolio">Portfolio</NavLink>
-                    <NavLink to="/background">Background</NavLink>
-                </nav>
-            </Header>
+      {/* -- Navbar -- */}
+      <Header>
+        <nav>
+          <NavLink exact to="/">Home</NavLink>
+          <NavLink to="/portfolio">Portfolio</NavLink>
+          <NavLink to="/background">Background</NavLink>
+        </nav>
+      </Header>
 
-            {/* -- Rest of site, nested under navbar -- */}
-            <Layout id="content-container">
-                <MobileViewContext.Provider value={{
-                    showDrawer: showMobileSidebar,
-                    setDrawer: setShowSidebar,
-                    mobileView,
-                    sidebarContent: <Sidebar.Content />
-                }}>
-                    {/* -- Sidebar  -- */}
-                    {/* {mobileView ? <MobileSidebar /> : <DesktopSidebar setMobile={setMobile} />} */}
-                    {mobileView ? <Sidebar.Mobile /> : <Sidebar.Desktop setMobile={setMobile} />}
+      {/* -- Rest of site, nested under navbar -- */}
+      <Layout id="content-container">
+        <MobileViewContext.Provider value={{
+          showDrawer: showMobileSidebar,
+          setDrawer: setShowSidebar,
+          mobileView,
+          sidebarContent: <Sidebar.Content />
+        }}>
+          {/* -- Sidebar  -- */}
+          {mobileView ? <Sidebar.Mobile />
+            // so desktop knows went to peace out
+            : <Sidebar.Desktop setMobile={setMobile} />
+          }
 
-                    {/* -- Main content, nested under sidebar-- */}
-                    <Layout id="content">
+          {/* -- Main content, nested under sidebar-- */}
+          <Layout id="content">
 
-                        {/* -- Body / Pages -- */}
-                        <Content id="body-container">
-                            <Switch>
-                                <Route exact path="/" render={() =>
-                                    <Pages.Body page={<Pages.Home />} />}
-                                />
-                                <Route exact path="/Background" render={() =>
-                                    <Pages.Body page={<Pages.Background />} />}
-                                />
-                                <Route exact path="/Portfolio" render={() =>
-                                    <Pages.Body page={<Pages.Portfolio />} />}
-                                />
-                            </Switch>
-                        </Content>
+            {/* -- Body / Pages -- */}
+            <Content id="body-container">
+              <Switch>
+                <Route exact path="/" render={() =>
+                  <Pages.Body page={<Pages.Home />} />}
+                />
+                <Route exact path="/Background" render={() =>
+                  <Pages.Body page={<Pages.Background />} />}
+                />
+                <Route exact path="/Portfolio" render={() =>
+                  <Pages.Body page={<Pages.Portfolio />} />}
+                />
+              </Switch>
+            </Content>
 
-                        {/* -- Footer, nested under sidebar-- */}
-                        <Footer>Nunc eu pharetra metus. Vivamus semper aliquam eros, eget vestibulum nisi consequat ac.</Footer>
+            {/* -- Footer, nested under sidebar-- */}
+            <Footer>Nunc eu pharetra metus. Vivamus semper aliquam eros, eget vestibulum nisi consequat ac.</Footer>
 
-                    </Layout>
+          </Layout>
 
-                </MobileViewContext.Provider>
-            </Layout>
-        </Layout>
-    )
+        </MobileViewContext.Provider>
+      </Layout>
+    </Layout>
+  )
 }

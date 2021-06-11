@@ -6,11 +6,12 @@ const { Title } = Typography;
 export default function PortfolioPage() {
   return (
     <div id='projects-page'>
-      <Title level={1} className="title title-view">Portfolio</Title>
+      <Title level={1} className="title title-view">Portfolio Highlights</Title>
+
       <Divider orientation="left" className="view-divider">
         <Title level={3} className="title title-section">Full Stack</Title>
       </Divider>
-      <Projects.Portfolio />
+      <Projects.Featured />
 
       <Divider className="view-divider">
         <Title level={3} className="title title-section">Backend / APIs</Title>
