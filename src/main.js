@@ -1,7 +1,6 @@
-import { DesktopSidebar, MobileSidebar, SidebarContent } from './views/sidebar/';
-import { NavLink, Route, Switch } from 'react-router-dom';
+import { Pages, Sidebar } from './module';
 import React, { useState } from 'react';
-import Pages from './views';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import { Layout } from "antd";
 const { Content, Header, Footer } = Layout;
 
@@ -32,10 +31,11 @@ export default function Main() {
                     showDrawer: showMobileSidebar,
                     setDrawer: setShowSidebar,
                     mobileView,
-                    sidebarContent: <SidebarContent />
+                    sidebarContent: <Sidebar.Content />
                 }}>
                     {/* -- Sidebar  -- */}
-                    {mobileView ? <MobileSidebar /> : <DesktopSidebar setMobile={setMobile} />}
+                    {/* {mobileView ? <MobileSidebar /> : <DesktopSidebar setMobile={setMobile} />} */}
+                    {mobileView ? <Sidebar.Mobile /> : <Sidebar.Desktop setMobile={setMobile} />}
 
                     {/* -- Main content, nested under sidebar-- */}
                     <Layout id="content">

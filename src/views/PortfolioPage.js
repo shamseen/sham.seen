@@ -1,7 +1,4 @@
-import {
-  FeaturedProjects,
-  BackendProjects, FrontendProjects
-} from "./codeProjects";
+import { Projects } from "../module";
 
 import { Divider, Typography } from "antd";
 const { Title } = Typography;
@@ -13,17 +10,17 @@ export default function PortfolioPage() {
       <Divider orientation="left" className="view-divider">
         <Title level={3} className="title title-section">Full Stack</Title>
       </Divider>
-      <FeaturedProjects />
+      <Projects.Portfolio />
 
       <Divider className="view-divider">
         <Title level={3} className="title title-section">Backend / APIs</Title>
       </Divider>
-      <BackendProjects />
+      <Projects.Backend />
 
       <Divider orientation="right" className="view-divider">
         <Title level={3} className="title title-section">Frontend / ReactJS</Title>
       </Divider>
-      <FrontendProjects />
+      <Projects.Frontend />
     </div>
   )
 }
