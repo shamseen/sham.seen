@@ -41,9 +41,9 @@ $content-height: calc(100vh - #{$navbar-height}); // CSS func, neat!
       font-size: 1.2em;
       text-align: center;
 
-      &.active {
-        border-bottom: 4px solid $white;
-      }
+      // &.active {
+      //   border-bottom: 4px solid $white;
+      // }
 
       &:hover {
         &:before {

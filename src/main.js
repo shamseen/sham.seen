@@ -19,9 +19,7 @@ export default function Main() {
       {/* -- Navbar -- */}
       <Header>
         <nav>
-          <NavLink exact to="/">Home</NavLink>
-          <NavLink to="/portfolio">Portfolio</NavLink>
-          <NavLink to="/background">Background</NavLink>
+          <Pages.Navbar />
         </nav>
       </Header>
 
@@ -58,7 +56,12 @@ export default function Main() {
             </Content>
 
             {/* -- Footer, nested under sidebar-- */}
-            <Footer>Nunc eu pharetra metus. Vivamus semper aliquam eros, eget vestibulum nisi consequat ac.</Footer>
+            <Footer>
+              React {'\u2022'} SCSS {'\u2022'} Ant Design {'\u2022'}
+              <a href="https://github.com/shamseen/sham.seen/" target="_blank">
+                <span> {'<Source Code>'}</span>
+              </a>
+            </Footer>
 
           </Layout>
 

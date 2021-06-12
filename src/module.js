@@ -11,14 +11,16 @@ export const Sidebar = {
 
 /* -- Pages -- */
 import BackgroundPage from "./views/BackgroundPage";
-import HomePage from "./views/HomePage";
 import Body from "./views/body";
+import HomePage from "./views/HomePage";
+import Navbar from "./views/Navbar"
 import PortfolioPage from "./views/PortfolioPage";
 
 export const Pages = {
   Background: BackgroundPage,
   Body: Body,
   Home: HomePage,
+  Navbar: Navbar,
   Portfolio: PortfolioPage,
 };
 
@@ -32,3 +34,10 @@ export const Projects = {
   Featured: FeaturedProjects,
   Frontend: FrontendProjects,
 }
+
+/* -- APIs -- */
+import getFiles from './dataServices/slateHostDataService';
+
+export const SlateHostDS = {
+  getFiles: getFiles
+};
