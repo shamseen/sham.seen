@@ -23,8 +23,8 @@ export default function ProjectDeck({ projects = placeholder }) {
     <div className={`project-deck${mobileView ? null : ' masonry'}`}>
       {/* TO DO: carousel of cards on mobile */}
       {
-        projects.map(p => {
-          return <ProjectCard proj={p} key={p.title} />;
+        projects.map((p, i) => {
+          return <ProjectCard proj={p} key={p.title + i} />;
         })
       }
     </div>

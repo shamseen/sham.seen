@@ -1,4 +1,4 @@
-@import "global";
+@use "vars" as *;
 
 .ant-badge-count {
   background-color: $text-light !important;
@@ -64,11 +64,6 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-
-  .ant-divider {
-    border-color: $gray;
-    border-width: 3px;
-  }
 }
 
 #resume {
