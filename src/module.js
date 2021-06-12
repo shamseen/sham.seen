@@ -36,8 +36,8 @@ export const Projects = {
 }
 
 /* -- APIs -- */
-import getFiles from './dataServices/slateHostDataService';
+// import getFiles from './dataServices/slateHostDataService';
 
-export const SlateHostDS = {
-  getFiles: getFiles
-};
+// export const SlateHostDS = {
+//   getFiles: getFiles
+// };
