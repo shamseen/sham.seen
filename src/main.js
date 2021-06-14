@@ -12,12 +12,15 @@ export const MobileViewContext = React.createContext();
 export default function Main() {
   const [mobileView, setMobile] = useState(false);
   const [showMobileSidebar, setShowSidebar] = useState(true);
-  const [cloudFiles, setFiles] = useState({});
+  const [cloudFiles, setFiles] = useState({
+    projects: [],
+    sidebar: [],
+    resume: {}
+  });
 
   const getFiles = async () => {
     const json = await SlateHostDS.getFiles();
     setFiles(json);
-
   }
 
   useEffect(() => {

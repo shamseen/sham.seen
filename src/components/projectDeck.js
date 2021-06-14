@@ -33,14 +33,11 @@ export default function ProjectDeck({ projects, idName }) {
   const { mobileView } = useContext(MobileViewContext);
 
   return (
-    // adding masonry layout if desktop
-    <div id={idName} className={`project-deck${mobileView ? null : ' masonry'}`}>
-      {/* TO DO: carousel of cards on mobile */}
+    /* TO DO: carousel of cards on mobile */
 
-
+    <div id={idName} className={`project-deck`}>
       {
         // in case user goes directly to url
-
         projects && Array.isArray(projects)
           ? projects.map((p, i) => { return <ProjectCard proj={p} key={p.filename + i} /> })
           : null
