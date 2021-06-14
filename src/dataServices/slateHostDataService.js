@@ -31,7 +31,6 @@ const sortFiles = (json) => {
 
 export const getFiles = async () => {
   const auth = `Basic ${process.env.REACT_APP_SLATEHOST_KEY}`;
-  console.log(auth);
 
   try {
     const response = await fetch(baseUrl, {
