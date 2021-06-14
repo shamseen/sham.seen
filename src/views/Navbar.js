@@ -18,8 +18,7 @@ export default function Navbar() {
       >
         <Step title={<NavLink exact to="/">Home</NavLink>} />
 
-        {/* <Step title={<NavLink to="/portfolio">Portfolio</NavLink>} /> */}
-        <Step title='Portfolio' />
+        <Step title={<NavLink to="/portfolio">Portfolio</NavLink>} />
 
         <Step title={<NavLink to="/background">Background</NavLink>} />
       </Steps>
