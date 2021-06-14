@@ -1,0 +1,43 @@
+@use 'vars' as *;
+
+$navbar-height: 7vh;
+$nav-item-height: calc(#{$navbar-height} - 1em);
+$nav-line-height: calc(#{$nav-item-height} - 1em);
+
+.ant-steps-item {
+  height: $nav-item-height;
+  line-height: $nav-line-height;
+  color: white;
+  z-index: 1;
+
+  .ant-steps-items-content {
+    height: 16px !important;
+  }
+
+  // hiding the step number
+  .ant-steps-item-icon {
+    visibility: hidden !important;
+    height: 0;
+  }
+
+  // the lil highlight bar
+  &:before {
+    background-color: white !important;
+    height: 4px !important;
+    border-radius: 4px;
+  }
+
+  // hiding the '>' symbol
+  &:after {
+    visibility: hidden;
+  }
+}
+
+// the bar disappears otherwise >:(
+.ant-steps-navigation {
+  padding: 0 !important;
+}
+
+.nav * {
+  color: white !important;
+}
