@@ -25,19 +25,18 @@ export const Pages = {
 };
 
 /* -- Portfolio -- */
-import BackendProjects from './views/codeProjects/backendProjects';
-import FeaturedProjects from './views/codeProjects/featuredProjects';
-import FrontendProjects from './views/codeProjects/frontendProjects';
+import ProjectDeck from './components/projectDeck';
+import ProjectCard from './components/projectCard';
 
 export const Projects = {
-  Backend: BackendProjects,
-  Featured: FeaturedProjects,
-  Frontend: FrontendProjects,
+  ProjectCard: ProjectCard,
+  ProjectDeck: ProjectDeck,
 }
 
 /* -- APIs -- */
-// import getFiles from './dataServices/slateHostDataService';
 
-// export const SlateHostDS = {
-//   getFiles: getFiles
-// };
+import { getFiles } from './dataServices/slateHostDataService';
+
+export const SlateHostDS = {
+  getFiles: getFiles
+};
