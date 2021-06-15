@@ -1,27 +1,21 @@
 import { useState } from 'react';
 import {
-  GithubOutlined, LineOutlined, LinkOutlined
+  GithubOutlined, LineOutlined, LinkOutlined,
 } from '@ant-design/icons';
-import { Card, Image, Skeleton, Typography } from 'antd';
+import { Card, Collapse, Image, Skeleton, Typography } from 'antd';
 
 const { Link, Paragraph } = Typography;
 const { Meta } = Card;
+const { Panel } = Collapse;
 
 export default function ProjectCard({ proj }) {
   const [actions, setActions] = useState([<LineOutlined />]);
+
+
   const imgUrl = 'https://slate.textile.io/ipfs/' + proj.cid;
-  const repo = 'https://github.com/shamseen/' + proj.data.name;
+  const repo = 'https://github.com/shamseen/' + proj.data.repo;
   const src = proj.data.source;
 
-  const descSettings = {
-    preview: {
-      rows: 2,
-      expandable: true
-    },
-    fullText: {
-      maxWidth: '70vh'
-    },
-  };
 
   const allCardActions = [
     <Link href={src} key="site" target="_blank"><LinkOutlined /></Link>,
@@ -33,29 +27,30 @@ export default function ProjectCard({ proj }) {
     <Card
       bordered={false}
       className='project-card'
-      key={proj.data.author}
+      key={proj.data.repo}
       actions={actions}
       onMouseEnter={() => setActions(allCardActions)}
       onMouseLeave={() => setActions([<LineOutlined />])}
     >
 
-      {/* Description: truncate + expand btn */}
-      <Meta title={proj.data.author}
+      {/* Truncate longer description, button to expand */}
+      <Meta title={proj.data.name}
         description={
-          <Paragraph ellipsis={descSettings.preview}>
-            {proj.data.body}
-          </Paragraph>
+
+          <Collapse ghost>
+            <Panel header='Description'>{proj.data.body}</Panel>
+          </Collapse>
         }
       >
       </Meta>
-
       <br />
 
       {/* Screenshot of app */}
+
       {!proj.cid ? <Skeleton.Image /> // no image from host = use skeleton
         : <Image src={imgUrl}
-          alt={`Screenshot of the ${proj.data.author} app`} />}
-
+          alt={`Screenshot of the ${proj.data.name} app`} />
+      }
     </Card >
   )
 }

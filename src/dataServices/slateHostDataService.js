@@ -1,7 +1,7 @@
 import { BranchesOutlined } from "@ant-design/icons";
+import { withError } from "antd/lib/modal/confirm";
 
 const baseUrl = 'https://slate.host/api/v2/get';
-const fileUrl = 'https://slate.textile.io/ipfs/';
 
 const projects = {
   backend: [],
@@ -12,17 +12,16 @@ const images = {
   projects: {},
   resume: null,
   sidebar: [],
-  url: fileUrl,
 }
 
 const sortFiles = (json) => {
 
   json.user.library.map((item, i) => {
-    const name = item.data.author.split(' '); // comes in as 'frontend Ludo'
+    const repo = item.data.author.split(' '); // comes in as 'frontend Ludo'
 
-    item.data.author = name[1]  // removing the 'frontend' part
+    item.data.repo = repo[1]  // removing the 'frontend' part
 
-    switch (name[0]) {
+    switch (repo[0]) {
 
       case 'resume': images.resume = item; break;
 
@@ -37,14 +36,7 @@ const sortFiles = (json) => {
     }
   });
 
-  console.log(json);
-
   images.projects = projects;
-  console.log(projects);
-  console.log(images.projects);
-  // console.log(images);
-  // console.log(JSON.stringify(images, null, 2));
-
   return images;
 }
 
@@ -77,7 +69,7 @@ export const getFiles = async () => {
   }
 
   catch (err) {
-    console.log(error)
+    console.log(err)
   }
 
 
