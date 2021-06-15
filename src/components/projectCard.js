@@ -10,7 +10,7 @@ const { Meta } = Card;
 export default function ProjectCard({ proj }) {
   const [actions, setActions] = useState([<LineOutlined />]);
   const imgUrl = 'https://slate.textile.io/ipfs/' + proj.cid;
-  const repo = 'https://github.com/shamseen/' + proj.data.name;
+  const repo = 'https://github.com/shamseen/' + proj.data.repo;
   const src = proj.data.source;
 
   const descSettings = {
@@ -33,14 +33,14 @@ export default function ProjectCard({ proj }) {
     <Card
       bordered={false}
       className='project-card'
-      key={proj.data.author}
+      key={proj.data.repo}
       actions={actions}
       onMouseEnter={() => setActions(allCardActions)}
       onMouseLeave={() => setActions([<LineOutlined />])}
     >
 
       {/* Description: truncate + expand btn */}
-      <Meta title={proj.data.author}
+      <Meta title={proj.data.name}
         description={
           <Paragraph ellipsis={descSettings.preview}>
             {proj.data.body}
@@ -54,7 +54,7 @@ export default function ProjectCard({ proj }) {
       {/* Screenshot of app */}
       {!proj.cid ? <Skeleton.Image /> // no image from host = use skeleton
         : <Image src={imgUrl}
-          alt={`Screenshot of the ${proj.data.author} app`} />}
+          alt={`Screenshot of the ${proj.data.name} app`} />}
 
     </Card >
   )

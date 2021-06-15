@@ -18,11 +18,11 @@ const images = {
 const sortFiles = (json) => {
 
   json.user.library.map((item, i) => {
-    const name = item.data.author.split(' '); // comes in as 'frontend Ludo'
+    const repo = item.data.author.split(' '); // comes in as 'frontend Ludo'
 
-    item.data.author = name[1]  // removing the 'frontend' part
+    item.data.repo = repo[1]  // removing the 'frontend' part
 
-    switch (name[0]) {
+    switch (repo[0]) {
 
       case 'resume': images.resume = item; break;
 
