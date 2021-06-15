@@ -12,58 +12,6 @@ $content-height: calc(100vh - #{$navbar-height}); // CSS func, neat!
 
 #content {
   height: $content-height;
-  // @include custom-scroll-bar();
-}
-
-.ant-layout-header {
-  padding: 0;
-  background-color: $background-transp;
-  height: $navbar-height !important;
-
-  nav {
-    display: flex;
-    justify-content: center !important;
-    align-items: center;
-    height: inherit;
-    transform: translateX(-60px);
-
-    // TODO: animated transitions
-    // https://codepen.io/sreisner/pen/yOOOjx?editors=0100
-    a {
-      color: $white;
-      height: $nav-item-height;
-      line-height: calc(#{$nav-item-height} - 4px);
-
-      display: inline-block;
-      margin-right: 3em;
-      position: relative;
-
-      font-size: 1.2em;
-      text-align: center;
-
-      // &.active {
-      //   border-bottom: 4px solid $white;
-      // }
-
-      &:hover {
-        &:before {
-          height: 5px;
-        }
-        // border-bottom: 4px solid $white;
-      }
-
-      &:before {
-        transition: 300ms;
-        // height: 5px;
-        content: "";
-        position: absolute;
-        background-color: $white;
-        height: 0%;
-        width: 100%;
-        bottom: 0px;
-      }
-    }
-  }
 }
 
 footer {
@@ -78,17 +26,14 @@ footer {
   background: $background url("../assets/catamaran.jpg") no-repeat;
   background-size: cover;
   background-position: center bottom;
-  // border-radius: 3px;
   border-radius: 0 0 3px 3px;
 
-  // margin: 2vh 2vw 0px 2vw;
   margin: 0vh 2vw;
   padding: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  // overflow: initial;
   @include custom-scroll-bar();
 }
 
