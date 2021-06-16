@@ -30,7 +30,6 @@ export default function PortfolioPage({ projects }) {
         className='project-deck'
         id='proj-frontend'
       />
-
     </div>
   )
 }
