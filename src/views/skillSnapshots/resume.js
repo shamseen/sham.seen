@@ -7,7 +7,7 @@ export default function Resume({ icon }) {
   return (
     <div id="resume">
       <Badge count={"PDF"}>
-        <Button size="large" icon={icon} href={resumeLink} target="_blank">Download</Button>
+        <Button size="large" icon={icon} href={resumeLink} target="_blank" ghost>Download</Button>
       </Badge>
       <Divider>Preview</Divider>
 

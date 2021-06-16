@@ -48,7 +48,7 @@ export default function ProjectCard({ proj }) {
       {/* Screenshot of app */}
 
       {!proj.cid ? <Skeleton.Image /> // no image from host = use skeleton
-        : <Image src={imgUrl}
+        : <Image src={imgUrl} preview={false}
           alt={`Screenshot of the ${proj.data.name} app`} />
       }
     </Card >

@@ -3,8 +3,8 @@ const { Title } = Typography;
 
 export default function HomePage() {
   return (
-    <div id="homePage">
-      <Title level={1} className="title title-view">Home Page</Title>
+    <div id="home-page">
+      <Title level={1} className="title title-view">Shamseen Rahman</Title>
       <Card id="objectiveStmt" bordered={false}>
         {/* Brand / Objective statement */}
         <Title level={3}>sham•seen</Title>
@@ -23,7 +23,7 @@ export default function HomePage() {
         </div>
       </Card>
 
-      <Card loading={true} />
+      {/* <Card loading={true} /> */}
     </div>
   )
 

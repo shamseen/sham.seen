@@ -1,6 +1,8 @@
 import ProjectCard from './projectCard';
 import { MobileViewContext } from '../main';
 import { useContext } from 'react';
+import { Divider, Typography } from "antd";
+const { Title } = Typography;
 import "../styles/projectDeck.scss";
 
 const placeholder = new Array(3).fill(
@@ -27,7 +29,7 @@ const placeholder = new Array(3).fill(
   }
 );
 
-export default function ProjectDeck({ projects, idName }) {
+export default function ProjectDeck({ projects, sectionId, title }) {
   // Desktop: row of cards
   // Mobile: carousel of cards
   const { mobileView } = useContext(MobileViewContext);
@@ -35,14 +37,17 @@ export default function ProjectDeck({ projects, idName }) {
   return (
     /* TO DO: carousel of cards on mobile */
 
-    <div id={idName} className={`project-deck`}>
-      {
-        // in case user goes directly to url
+    <div id={sectionId} className={`project-deck`}>
+
+      <Divider orientation="center" className="view-divider">
+        <Title level={3} className="title title-section">{title}</Title>
+      </Divider>
+
+      {// in case user goes directly to url
         projects && Array.isArray(projects)
           ? projects.map((p, i) => { return <ProjectCard proj={p} key={p.filename + i} /> })
           : null
       }
-
 
     </div>
   );
