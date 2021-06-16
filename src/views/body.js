@@ -22,7 +22,7 @@ export default function Body({ page }) {
 
       {/* Views */}
       <Space
-        id="projects"
+        id="pages"
         direction="vertical"
         align="block"
         size="large"

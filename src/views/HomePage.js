@@ -22,8 +22,6 @@ export default function HomePage() {
           </ul>
         </div>
       </Card>
-
-      <Card loading={true} />
     </div>
   )
 

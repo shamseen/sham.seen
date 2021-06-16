@@ -57,7 +57,7 @@ export default function SidebarContent({ images, resume }) {
   ]
 
   return (
-    <Space direction="vertical" id="sidebar" className="gray-bg" size="small">
+    <Space direction="vertical" id="sidebar" size="small">
 
       {/* -- Contact Info -- */}
       <div id="contact">
@@ -69,7 +69,7 @@ export default function SidebarContent({ images, resume }) {
           />
         </Badge>
 
-        <Title level={3} style={{ flexBasis: '100%', marginTop: '0.5em' }}>Shamseen Rahman</Title>
+        <Title level={3} style={{ flexBasis: '100%', marginTop: '0.5em' }}></Title>
 
         {/* <Button.Group> */}
         {contactLinks.map(link => {

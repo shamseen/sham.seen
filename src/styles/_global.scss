@@ -4,7 +4,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-  color: $comments;
+  color: $white;
   letter-spacing: 1px;
 }
 
@@ -18,10 +18,13 @@
   font-size: 25px !important;
 }
 
+.ant-image-mask {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
 .ant-modal-content {
   background-color: $gray;
   border-color: $white;
-  color: $text-light;
 
   .anticon {
     font-size: 14px !important;

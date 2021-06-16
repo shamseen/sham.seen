@@ -4,40 +4,102 @@ $navbar-height: 7vh;
 $nav-item-height: calc(#{$navbar-height} - 1em);
 $nav-line-height: calc(#{$nav-item-height} - 1em);
 
+@mixin hideSymbol() {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+/* -- Top-level Components -- */
+
+header {
+  display: flex;
+  justify-content: center;
+  // @include background-section($black);
+  // @include background-section($ali-light-gray);
+
+  @include background-section($black);
+}
+
+.ant-layout-header {
+  padding: 0;
+  height: $navbar-height !important;
+  @include background-section($black);
+  color: $ali-black;
+  nav {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    height: inherit;
+  }
+}
+
+/* -- Nav Items -- */
+
+.ant-steps {
+  width: 100vw;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0 !important;
+  height: $nav-line-height;
+}
+
 .ant-steps-item {
   height: $nav-item-height;
   line-height: $nav-line-height;
-  color: white;
+  width: 30vw !important;
+  max-width: 250px;
+
+  padding-left: 0 !important;
+  padding-top: 0px;
+  margin: 0;
   z-index: 1;
 
-  .ant-steps-items-content {
-    height: 16px !important;
+  * {
+    text-align: center;
+    width: inherit;
+    max-width: inherit;
+    height: inherit !important;
+  }
+
+  a {
+    font-size: 1.2em;
+    line-height: $nav-item-height !important;
+    color: $white !important;
+
+    // animate on/off hover
+    transition: font-size 200ms linear;
+
+    &:hover {
+      font-size: 1.5em;
+      transition: 350ms;
+    }
+  }
+
+  .ant-steps-item-container {
+    text-align: inherit !important;
+    margin: auto !important;
+    max-width: inherit !important;
   }
 
   // hiding the step number
   .ant-steps-item-icon {
-    visibility: hidden !important;
-    height: 0;
+    @include hideSymbol();
   }
 
   // the lil highlight bar
   &:before {
-    background-color: white !important;
+    background-color: $white !important;
     height: 4px !important;
     border-radius: 4px;
+    width: initial;
   }
 
   // hiding the '>' symbol
   &:after {
-    visibility: hidden;
+    @include hideSymbol();
+    position: initial;
   }
-}
-
-// the bar disappears otherwise >:(
-.ant-steps-navigation {
-  padding: 0 !important;
-}
-
-.nav * {
-  color: white !important;
 }
