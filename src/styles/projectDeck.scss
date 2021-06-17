@@ -1,33 +1,75 @@
-img {
-  border-radius: 5px !important;
-}
+@use 'vars' as *;
 
+/* -- Top level elements */
 .project-deck {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: flex-start;
+  padding-bottom: 2em;
+  opacity: 0.75;
 
-  .project-card {
-    max-width: 350px;
-    margin: 1em;
+  &:nth-of-type(odd) {
+    @include background-section($red);
   }
 
-  .ant-typography-ellipsis {
-    color: inherit;
+  &:nth-of-type(even) {
+    @include background-section($pink);
+  }
+
+  * {
+    opacity: 1 !important;
   }
 }
 
-// masonry src: https://w3bits.com/flexbox-masonry/
-// .masonry {
-//   display: flex;
-//   flex-flow: column wrap;
-//   flex-basis: 40rem;
-//   max-height: 800px;
-//   margin-left: -8px; /* Adjustment for the gutter */
-//   // width: 100%;
+.project-card {
+  background-color: $gray;
+  max-width: 350px;
+  margin: 1em;
+  // z-index: 1;
 
-//   .project-card {
-//     margin: 0 8px 8px 0; /* Some gutter */
-//   }
-// }
+  * {
+    background-color: $ali-light-gray;
+  }
+
+  .ant-card-actions {
+    background-color: $ali-light-gray;
+    border-color: $ali-light-gray;
+    span {
+      color: $black;
+    }
+  }
+
+  color: $ali-light-gray !important;
+}
+
+/* -- Sub elements */
+
+.ant-collapse-arrow {
+  font-size: 14px !important;
+  padding-top: 0 !important;
+}
+
+.ant-collapse-content-box {
+  padding-top: 0 !important;
+  // color: $ali-light-gray;
+}
+
+.ant-collapse-item {
+  padding-top: 0 !important;
+  * {
+    padding-top: inherit !important;
+  }
+}
+
+.ant-collapse-header {
+  padding-top: 0 !important;
+
+  span {
+    font-size: 16px !important;
+  }
+}
+
+img {
+  border-radius: 5px !important;
+}

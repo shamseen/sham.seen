@@ -1,33 +1,25 @@
 import { useState } from 'react';
 import {
-  ArrowsAltOutlined, GithubOutlined, LineOutlined, LinkOutlined
+  DoubleRightOutlined, GithubOutlined, LineOutlined, LinkOutlined,
 } from '@ant-design/icons';
-import { Card, Image, Popover, Skeleton, Typography } from 'antd';
+import { Card, Collapse, Image, Skeleton, Typography } from 'antd';
 
 const { Link, Paragraph } = Typography;
 const { Meta } = Card;
+const { Panel } = Collapse;
 
 export default function ProjectCard({ proj }) {
   const [actions, setActions] = useState([<LineOutlined />]);
 
-  const descSettings = {
-    preview: {
-      rows: 2,
-      expandable: false
-    },
-    fullText: {
-      maxWidth: '70vh'
-    },
-    img: !proj.image ? <Skeleton.Image />
-      : <Image src={proj.image} alt={proj.title} />
-  };
+
+  const imgUrl = 'https://slate.textile.io/ipfs/' + proj.cid;
+  const repo = 'https://github.com/shamseen/' + proj.data.repo;
+  const src = proj.data.source;
+
 
   const allCardActions = [
-    <Link href={proj.url} key="site" target="_blank"><LinkOutlined /></Link>,
-    <Popover content={proj.desc} trigger="click" key="descAll" overlayStyle={descSettings.fullText}>
-      <ArrowsAltOutlined />
-    </Popover>,
-    <Link href={proj.repo} key="repo" target="_blank"><GithubOutlined /></Link>,
+    <Link href={src} key="site" target="_blank"><LinkOutlined style={{ fontSize: '16px', color: 'black' }} /></Link>,
+    <Link href={repo} key="repo" target="_blank"><GithubOutlined style={{ fontSize: '16px', color: 'black !important' }} /></Link>,
   ];
 
   return (
@@ -35,30 +27,31 @@ export default function ProjectCard({ proj }) {
     <Card
       bordered={false}
       className='project-card'
-      key={proj.title}
+      key={proj.data.repo}
       actions={actions}
       onMouseEnter={() => setActions(allCardActions)}
       onMouseLeave={() => setActions([<LineOutlined />])}
     >
-      {/* Truncate longer description, actions has a btn to expand */}
-      {/* (overriden if it looks poopoo in masonry layout) */}
-      <Meta title={proj.title}
+
+      {/* Truncate longer description, button to expand */}
+      <Meta title={proj.data.name}
         description={
-          (proj.expanded ? proj.desc
-            : <Paragraph ellipsis={descSettings.preview} key="descPreview">
-              {proj.desc}
-            </Paragraph>)}
+          <Collapse ghost expandIcon={({ isActive }) => <DoubleRightOutlined
+            rotate={isActive ? 90 : 0}
+          />}>
+            <Panel header='Description...'>{proj.data.body}</Panel>
+          </Collapse>
+        }
       >
       </Meta>
-
       <br />
-      {/* Image with caption on hover IF caption isn't expanded*/}
-      {proj.expanded ? descSettings.img
-        : <Popover content={proj.desc} key="descAll" overlayStyle={descSettings.fullText}>
-          {descSettings.img}
-        </Popover>
-      }
 
-    </Card>
+      {/* Screenshot of app */}
+
+      {!proj.cid ? <Skeleton.Image /> // no image from host = use skeleton
+        : <Image src={imgUrl} preview={false}
+          alt={`Screenshot of the ${proj.data.name} app`} />
+      }
+    </Card >
   )
 }
