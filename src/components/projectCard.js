@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-  GithubOutlined, LineOutlined, LinkOutlined,
+  DoubleRightOutlined, GithubOutlined, LineOutlined, LinkOutlined,
 } from '@ant-design/icons';
 import { Card, Collapse, Image, Skeleton, Typography } from 'antd';
 
@@ -18,8 +18,8 @@ export default function ProjectCard({ proj }) {
 
 
   const allCardActions = [
-    <Link href={src} key="site" target="_blank"><LinkOutlined /></Link>,
-    <Link href={repo} key="repo" target="_blank"><GithubOutlined /></Link>,
+    <Link href={src} key="site" target="_blank"><LinkOutlined style={{ fontSize: '16px', color: 'black' }} /></Link>,
+    <Link href={repo} key="repo" target="_blank"><GithubOutlined style={{ fontSize: '16px', color: 'black !important' }} /></Link>,
   ];
 
   return (
@@ -36,9 +36,10 @@ export default function ProjectCard({ proj }) {
       {/* Truncate longer description, button to expand */}
       <Meta title={proj.data.name}
         description={
-
-          <Collapse ghost>
-            <Panel header='Description'>{proj.data.body}</Panel>
+          <Collapse ghost expandIcon={({ isActive }) => <DoubleRightOutlined
+            rotate={isActive ? 90 : 0}
+          />}>
+            <Panel header='Description...'>{proj.data.body}</Panel>
           </Collapse>
         }
       >
@@ -48,7 +49,7 @@ export default function ProjectCard({ proj }) {
       {/* Screenshot of app */}
 
       {!proj.cid ? <Skeleton.Image /> // no image from host = use skeleton
-        : <Image src={imgUrl}
+        : <Image src={imgUrl} preview={false}
           alt={`Screenshot of the ${proj.data.name} app`} />
       }
     </Card >

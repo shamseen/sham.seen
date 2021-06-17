@@ -12,5 +12,5 @@
 
   // max-height: 100%; // scroll?
   overflow-y: scroll;
-  @include custom-scroll-bar($gray, $background-transp);
+  @include custom-scroll-bar($ali-dark-gray);
 }

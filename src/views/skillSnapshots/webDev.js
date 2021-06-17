@@ -7,8 +7,9 @@ export default function WebSevSkills({ skillIcon }) {
     + `&layout=compact`
     + `&custom_title=Languages`
     + `&langs_count=7`
-    + `&theme=graywhite`
-    + `&hide_border=true`;
+    // + `&theme=graywhite`
+    + `&hide_border=true`
+    + `text_color=f7ebe8`;
 
   const skills = [
     'React, SCSS, Bootstrap 4, AngularJS',
