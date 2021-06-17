@@ -2,7 +2,8 @@
 
 .ant-badge-count {
   // background-color: $text-light !important;
-  @include background-section($red);
+  // @include background-section($red);
+  background-color: $red;
 }
 
 aside {
