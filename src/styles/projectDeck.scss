@@ -7,14 +7,13 @@
   justify-content: space-around;
   align-items: flex-start;
   padding-bottom: 2em;
-  opacity: 0.75;
 
   &:nth-of-type(odd) {
-    @include background-section($red);
+    background-color: rgba($red, $bg-opacity);
   }
 
   &:nth-of-type(even) {
-    @include background-section($pink);
+    background-color: rgba($pink, $bg-opacity);
   }
 
   * {
@@ -23,17 +22,17 @@
 }
 
 .project-card {
-  background-color: $gray;
+  background-color: $white;
   max-width: 350px;
   margin: 1em;
   // z-index: 1;
 
   * {
-    background-color: $ali-light-gray;
+    background-color: $white;
   }
 
   .ant-card-actions {
-    background-color: $ali-light-gray;
+    background-color: $white;
     border-color: $ali-light-gray;
     span {
       color: $black;
@@ -52,7 +51,6 @@
 
 .ant-collapse-content-box {
   padding-top: 0 !important;
-  // color: $ali-light-gray;
 }
 
 .ant-collapse-item {

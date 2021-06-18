@@ -29,7 +29,7 @@ footer {
 /* -- Everythinng else -- */
 
 #body-container {
-  background: $gray url("../assets/background_v2.jpg") no-repeat;
+  background: $black url("../assets/background_v2.jpg") no-repeat;
   background-size: cover;
   background-position: center bottom;
   border-radius: 0 0 3px 3px;
@@ -50,9 +50,7 @@ footer {
   flex-wrap: wrap;
 
   #body {
-    // background: $gray;
-    // opacity: 0.8;
-    @include background-section($ali-dark-gray);
+    background-color: rgba($ali-dark-gray, $bg-opacity);
     color: white;
 
     display: flex;
@@ -84,7 +82,7 @@ footer {
     }
 
     .title-view {
-      @include background-section($red);
+      background-color: rgba($red, $bg-opacity);
       opacity: 1 important;
       margin: 0;
       text-align: center;
