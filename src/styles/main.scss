@@ -77,12 +77,9 @@ footer {
       height: auto;
     }
 
-    .title {
-      color: $white;
-    }
-
     .title-view {
       background-color: rgba($red, $bg-opacity);
+      color: $white;
       opacity: 1 important;
       margin: 0;
       text-align: center;

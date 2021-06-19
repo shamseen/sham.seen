@@ -2,58 +2,46 @@ import { useState } from 'react';
 import {
   DoubleRightOutlined, GithubOutlined, LineOutlined, LinkOutlined,
 } from '@ant-design/icons';
-import { Card, Collapse, Image, Skeleton, Typography } from 'antd';
+import { Card, Collapse, Divider, Image, Skeleton, Typography } from 'antd';
 
-const { Link, Paragraph } = Typography;
-const { Meta } = Card;
+const { Link } = Typography;
 const { Panel } = Collapse;
 
 export default function ProjectCard({ proj }) {
-  const [actions, setActions] = useState([<LineOutlined />]);
-
 
   const imgUrl = 'https://slate.textile.io/ipfs/' + proj.cid;
   const repo = 'https://github.com/shamseen/' + proj.data.repo;
   const src = proj.data.source;
 
 
-  const allCardActions = [
-    <Link href={src} key="site" target="_blank"><LinkOutlined style={{ fontSize: '16px', color: 'black' }} /></Link>,
-    <Link href={repo} key="repo" target="_blank"><GithubOutlined style={{ fontSize: '16px', color: 'black !important' }} /></Link>,
+  const links = [
+    <Link href={src} key="site" target="_blank"><LinkOutlined /></Link>,
+    <Divider type='vertical' />,
+    <Link href={repo} key="repo" target="_blank"><GithubOutlined /></Link>,
   ];
 
   return (
-    /* --- Hovering over card will show links to site & repo -- */
     <Card
-      bordered={false}
+      title={proj.data.name}
       className='project-card'
+      bordered={false}
+      extra={<>{links}</>}
       key={proj.data.repo}
-      actions={actions}
-      onMouseEnter={() => setActions(allCardActions)}
-      onMouseLeave={() => setActions([<LineOutlined />])}
     >
+      {/* TODO: Truncate longer description as collapse header */}
 
-      {/* Truncate longer description, button to expand */}
-      <Meta
-        title={proj.data.name}
-        className='card-text'
-        description={
-          <Collapse ghost expandIcon={({ isActive }) => <DoubleRightOutlined
-            rotate={isActive ? 90 : 0}
-          />}>
-            <Panel header='Description...'>{proj.data.body}</Panel>
-          </Collapse>
-        }
-      >
-      </Meta>
-      <br />
+      {/* Description */}
+      <Collapse ghost expandIcon={({ isActive }) => <DoubleRightOutlined
+        rotate={isActive ? 90 : 0}
+      />}>
+        <Panel className='card-text' header='Description...'>{proj.data.body}</Panel>
+      </Collapse>
 
-      {/* Screenshot of app */}
-
+      {/* Preview */}
       {!proj.cid ? <Skeleton.Image /> // no image from host = use skeleton
-        : <Image src={imgUrl} preview={false}
+        : <Image src={imgUrl} preview={false} height={'200px'}
           alt={`Screenshot of the ${proj.data.name} app`} />
       }
-    </Card >
+    </Card>
   )
 }
