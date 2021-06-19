@@ -40,7 +40,7 @@ export default function ProjectDeck({ projects, sectionId, title }) {
     <div id={sectionId} className={`project-deck`}>
 
       <Divider orientation="center" className="view-divider">
-        <Title level={3} className="title title-section">{title}</Title>
+        <Title level={2} className="title title-section">{title}</Title>
       </Divider>
 
       {// in case user goes directly to url
