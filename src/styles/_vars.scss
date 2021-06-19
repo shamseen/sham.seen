@@ -15,17 +15,18 @@ $ali-light-gray: rgb(126, 115, 134, 1);
 $height: 100%;
 $width: 98%;
 
-@mixin alternating-colors($is-pink) {
-  @if $is-pink {
-    background-color: $pink;
-    h3 {
-      color: $red;
-    }
-  } @else {
-    background-color: rgba($red, 0.85);
-    h3 {
-      color: $white;
-    }
+@mixin alternating-colors($bg-color, $txt-color) {
+  ::before {
+    border-top: 2px solid $txt-color !important;
+  }
+
+  ::after {
+    border-top: 2px solid $txt-color !important;
+  }
+
+  background-color: $bg-color;
+  h2 {
+    color: $txt-color;
   }
 }
 
