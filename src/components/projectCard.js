@@ -34,7 +34,9 @@ export default function ProjectCard({ proj }) {
     >
 
       {/* Truncate longer description, button to expand */}
-      <Meta title={proj.data.name}
+      <Meta
+        title={proj.data.name}
+        className='card-text'
         description={
           <Collapse ghost expandIcon={({ isActive }) => <DoubleRightOutlined
             rotate={isActive ? 90 : 0}

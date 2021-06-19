@@ -1,8 +1,6 @@
 @use "vars" as *;
 
 .ant-badge-count {
-  // background-color: $text-light !important;
-  // @include background-section($red);
   background-color: $red;
 }
 
@@ -15,7 +13,6 @@ aside {
   display: flex;
   align-items: center;
   height: $height;
-  // @include background-section($ali-light-gray);
 
   .ant-divider {
     border-top-width: 2px;
@@ -33,14 +30,13 @@ aside {
 
   // tab headers don't automatically change color :')
   .ant-tabs-tab {
-    // background: $white-transp;
-    @include background-section($ali-dark-gray);
+    background-color: rgba($ali-dark-gray, $bg-opacity);
     text-align: center;
     color: $white;
   }
 
   .ant-tabs-tab-active {
-    @include background-section($ali-light-gray);
+    background-color: rgba($ali-light-gray, $bg-opacity);
     border: 2px solid $white;
     border-bottom: 0;
   }

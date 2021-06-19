@@ -7,14 +7,15 @@
   justify-content: space-around;
   align-items: flex-start;
   padding-bottom: 2em;
-  opacity: 0.75;
 
   &:nth-of-type(odd) {
-    @include background-section($red);
+    // background-color: rgba($red, 0.9
+    @include alternating-colors(false);
   }
 
   &:nth-of-type(even) {
-    @include background-section($pink);
+    // background-color: rgba($pink, 1);
+    @include alternating-colors(true);
   }
 
   * {
@@ -23,50 +24,53 @@
 }
 
 .project-card {
-  background-color: $gray;
+  background-color: $ali-light-gray;
   max-width: 350px;
   margin: 1em;
-  // z-index: 1;
 
   * {
-    background-color: $ali-light-gray;
+    background-color: inherit;
   }
 
   .ant-card-actions {
-    background-color: $ali-light-gray;
+    background-color: inherit;
     border-color: $ali-light-gray;
-    span {
-      color: $black;
-    }
   }
 
-  color: $ali-light-gray !important;
+  // icons
+  path {
+    color: $red;
+  }
 }
 
 /* -- Sub elements */
 
-.ant-collapse-arrow {
-  font-size: 14px !important;
+.ant-collapse-header .ant-collapse-item .ant-collapse-content-box {
   padding-top: 0 !important;
 }
 
-.ant-collapse-content-box {
-  padding-top: 0 !important;
-  // color: $ali-light-gray;
-}
-
-.ant-collapse-item {
-  padding-top: 0 !important;
-  * {
-    padding-top: inherit !important;
+.card-text {
+  .ant-card-meta-title {
+    color: $red;
+    font-weight: bold;
+    font-size: 20px;
   }
-}
 
-.ant-collapse-header {
-  padding-top: 0 !important;
+  .ant-collapse-content-box {
+    color: $black;
+  }
 
+  .ant-collapse-header {
+    color: $ali-light-gray !important;
+  }
+
+  // changing arrow is annoying >:(
   span {
     font-size: 16px !important;
+  }
+
+  path {
+    color: $red !important;
   }
 }
 
