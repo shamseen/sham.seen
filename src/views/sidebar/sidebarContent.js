@@ -91,10 +91,15 @@ export default function SidebarContent({ images, resume }) {
       </div>
 
       {/* -- Skill snapshots -- */}
-      <Tabs defaultActiveKey="0" type="card" size='large' className="skillSnapshot">
+      <Tabs defaultActiveKey="0"
+        className="skillSnapshot"
+        type='card' centered
+        animated={{ inkBar: false, tabPane: true }}
+      >
         {skillTabs.map((tab, i) => {
           return (
-            <Tabs.TabPane tab={tab.name} key={i}>
+            <Tabs.TabPane tab={tab.name} key={i} forceRender={true}>
+              {/* forceRender fixes tab sizing */}
               {tab.content}
             </Tabs.TabPane>
           );

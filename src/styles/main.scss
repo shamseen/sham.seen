@@ -1,10 +1,6 @@
 @use "vars" as *;
 @use "global";
 
-$navbar-height: 7vh;
-$nav-item-height: calc(#{$navbar-height} - 1em);
-$content-height: calc(100vh - #{$navbar-height}); // CSS func, neat!
-
 /* -- Top level elements -- */
 #layout {
   overflow-y: hidden;
@@ -88,14 +84,14 @@ footer {
   }
 }
 
-.ant-layout-sider {
-  background-color: $ali-light-gray;
-  height: $content-height;
-}
+// .ant-layout-sider {
+//   background-color: $ali-light-gray;
+//   height: $content-height;
+// }
 
-.ant-layout-sider-children {
-  @include custom-scroll-bar($ali-dark-gray);
-}
+// .ant-layout-sider-children {
+//   @include custom-scroll-bar($ali-dark-gray);
+// }
 
 .ant-spin {
   flex: 1, 1, auto;
