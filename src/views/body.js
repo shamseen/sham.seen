@@ -6,7 +6,7 @@ const { Title } = Typography;
 import { UserSwitchOutlined } from '@ant-design/icons';
 
 export default function Body({ page }) {
-  const { showDrawer, setDrawer, mobileView } = useContext(MobileViewContext);
+  const { footer, showDrawer, setDrawer, mobileView } = useContext(MobileViewContext);
 
   const mobileSidebarBtn =
     <Affix offsetTop={60}>
@@ -19,16 +19,8 @@ export default function Body({ page }) {
     <div id="body">
       {/* Mobile sidebar btn */}
       {mobileView ? mobileSidebarBtn : null}
-
-      {/* Views */}
-      <Space
-        id="pages"
-        direction="vertical"
-        align="block"
-        size="large"
-      >
-        {page}
-      </Space>
+      {page}
+      {footer}
     </div>
   )
 }

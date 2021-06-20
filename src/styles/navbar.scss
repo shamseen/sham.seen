@@ -17,7 +17,7 @@ $nav-line-height: calc(#{$nav-item-height} - 1em);
 header {
   display: flex;
   justify-content: center;
-  background-color: rgba($black, $bg-opacity) !important;
+  background-color: $ali-dark-gray !important;
 }
 
 .ant-layout-header {

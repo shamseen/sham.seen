@@ -18,6 +18,13 @@ export default function Main() {
     resume: {}
   });
 
+  const footer = <Footer>
+    React {'\u2022'} SCSS {'\u2022'} Ant Design {'\u2022'}
+    <a href="https://github.com/shamseen/sham.seen/" target="_blank">
+      <span> {'<Source Code>'}</span>
+    </a>
+  </Footer>
+
   const getFiles = async () => {
     const json = await SlateHostDS.getFiles();
     setFiles(json);
@@ -39,6 +46,7 @@ export default function Main() {
       {/* -- Rest of site, nested under navbar -- */}
       <Layout id="content-container">
         <MobileViewContext.Provider value={{
+          footer,
           showDrawer: showMobileSidebar,
           setDrawer: setShowSidebar,
           mobileView,
@@ -57,25 +65,19 @@ export default function Main() {
             <Content id="body-container">
               <Switch>
                 <Route exact path="/" render={() =>
-                  <Pages.Body page={<Pages.Home />} />}
+                  <Pages.Body page={<Pages.Home className='page' />} />}
                 />
                 <Route exact path="/Background" render={() =>
-                  <Pages.Body page={<Pages.Background />} />}
+                  <Pages.Body page={<Pages.Background className='page' />} />}
                 />
                 <Route exact path="/Portfolio" render={() =>
-                  <Pages.Body page={<Pages.Portfolio projects={cloudFiles.projects} />} />}
+                  <Pages.Body page={<Pages.Portfolio projects={cloudFiles.projects} className='page' />} />}
                 />
+                {/* -- Footer, nested under sidebar-- */}
+
               </Switch>
+
             </Content>
-
-            {/* -- Footer, nested under sidebar-- */}
-            <Footer>
-              React {'\u2022'} SCSS {'\u2022'} Ant Design {'\u2022'}
-              <a href="https://github.com/shamseen/sham.seen/" target="_blank">
-                <span> {'<Source Code>'}</span>
-              </a>
-            </Footer>
-
           </Layout>
         </MobileViewContext.Provider>
       </Layout>
