@@ -4,7 +4,7 @@ $pink: rgba(255, 169, 135, 1);
 $white: rgba(247, 235, 232, 1);
 $gray: rgba(68, 65, 64, 1);
 $black: rgba(30, 30, 36, 1);
-$bg-opacity: 0.8;
+$bg-opacity: 0.6;
 
 /* -- Allison -- */
 $ali-black: rgba(14, 16, 21, 1);
@@ -14,6 +14,12 @@ $ali-light-gray: rgb(126, 115, 134, 1);
 /* Spacing */
 $height: 100%;
 $width: 98%;
+
+/* Content sizing */
+$sidebar-width: 375px;
+$navbar-height: 7vh;
+$nav-item-height: calc(#{$navbar-height} - 1em);
+$content-height: calc(100vh - #{$navbar-height}); // CSS func, neat!
 
 @mixin alternating-colors($bg-color, $txt-color) {
   ::before {
@@ -32,6 +38,7 @@ $width: 98%;
 
 @mixin custom-scroll-bar($bar: $ali-light-gray) {
   overflow-y: scroll;
+  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     width: 8px;

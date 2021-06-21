@@ -1,10 +1,6 @@
 @use "vars" as *;
 @use "global";
 
-$navbar-height: 7vh;
-$nav-item-height: calc(#{$navbar-height} - 1em);
-$content-height: calc(100vh - #{$navbar-height}); // CSS func, neat!
-
 /* -- Top level elements -- */
 #layout {
   overflow-y: hidden;
@@ -19,6 +15,7 @@ footer {
   padding: 0px !important;
   text-align: center;
   background-color: $ali-light-gray;
+  width: 100%;
 
   // repo link text
   span {
@@ -33,29 +30,28 @@ footer {
   background-size: cover;
   background-position: center bottom;
   border-radius: 0 0 3px 3px;
+  height: 100%;
 
-  // margin: 0vh 2vw;
   margin: 0;
   padding: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  // flex: 1 1 auto;
-
-  @include custom-scroll-bar();
 }
 
 .ant-layout-content {
   display: flex;
   flex-wrap: wrap;
 
-  #body {
+  .body {
+    @include custom-scroll-bar();
     background-color: rgba($ali-dark-gray, $bg-opacity);
     color: white;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 
     margin: 0px;
     padding: 0;
@@ -70,11 +66,6 @@ footer {
       button {
         width: 60px;
       }
-    }
-
-    #pages {
-      width: 100%;
-      height: auto;
     }
 
     .title-view {
@@ -93,15 +84,6 @@ footer {
   }
 }
 
-.ant-layout-sider {
-  background-color: $ali-light-gray;
-  height: $content-height;
-}
-
-.ant-layout-sider-children {
-  @include custom-scroll-bar($ali-dark-gray);
-}
-
 .ant-spin {
   flex: 1, 1, auto;
   width: 100%;
@@ -114,8 +96,8 @@ footer {
 #objectiveStmt {
   background-color: $pink;
   width: 100%;
-  align-self: flex-end;
-  margin-top: 1em;
+  align-self: center;
+  margin-top: 2em;
 
   * {
     color: $gray;
@@ -124,4 +106,22 @@ footer {
   h3 {
     color: $red;
   }
+}
+
+.page {
+  width: 100%;
+  min-height: fit-content;
+  height: 100%;
+  flex-grow: 1;
+}
+
+/* -- Page transitions -- */
+// idk why this doesn't work with .body
+.route-wrapper {
+  position: relative;
+}
+
+.route-wrapper > div {
+  position: absolute;
+  width: 100%;
 }

@@ -4,7 +4,7 @@ import { Projects } from '../module';
 export default function PortfolioPage({ projects }) {
 
   return (
-    <div id='projects-page'>
+    <div id='projects-page' className='page'>
 
       <Typography.Title level={1} className="title title-view">
         Portfolio Highlights

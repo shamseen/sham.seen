@@ -7,9 +7,10 @@ export default function WebSevSkills({ skillIcon }) {
     + `&layout=compact`
     + `&custom_title=Languages`
     + `&langs_count=7`
-    // + `&theme=graywhite`
+    + `&bg_color=7E7386`
     + `&hide_border=true`
-    + `text_color=f7ebe8`;
+    + `&text_color=F7EBE8`
+    + `&title_color=F7EBE8`;
 
   const skills = [
     'React, SCSS, Bootstrap 4, AngularJS',
@@ -36,7 +37,7 @@ export default function WebSevSkills({ skillIcon }) {
 
     <Image
       // transparent bg when on sidebar
-      src={languageStats + `&bg_color=00000000&hide_title=true`}
+      src={languageStats + `&hide_title=true`}
 
       // opaque bg if user clicks on image
       preview={{ src: languageStats }}
