@@ -43,7 +43,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
 
-  #body {
+  .body {
     @include custom-scroll-bar();
     background-color: rgba($ali-dark-gray, $bg-opacity);
     color: white;
@@ -84,15 +84,6 @@ footer {
   }
 }
 
-// .ant-layout-sider {
-//   background-color: $ali-light-gray;
-//   height: $content-height;
-// }
-
-// .ant-layout-sider-children {
-//   @include custom-scroll-bar($ali-dark-gray);
-// }
-
 .ant-spin {
   flex: 1, 1, auto;
   width: 100%;
@@ -105,8 +96,8 @@ footer {
 #objectiveStmt {
   background-color: $pink;
   width: 100%;
-  align-self: flex-end;
-  margin-top: 1em;
+  align-self: center;
+  margin-top: 2em;
 
   * {
     color: $gray;
@@ -120,5 +111,17 @@ footer {
 .page {
   width: 100%;
   min-height: fit-content;
+  height: 100%;
   flex-grow: 1;
+}
+
+/* -- Page transitions -- */
+// idk why this doesn't work with .body
+.route-wrapper {
+  position: relative;
+}
+
+.route-wrapper > div {
+  position: absolute;
+  width: 100%;
 }

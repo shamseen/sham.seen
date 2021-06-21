@@ -38,6 +38,7 @@ $content-height: calc(100vh - #{$navbar-height}); // CSS func, neat!
 
 @mixin custom-scroll-bar($bar: $ali-light-gray) {
   overflow-y: scroll;
+  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     width: 8px;
